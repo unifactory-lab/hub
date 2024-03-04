@@ -1,0 +1,8 @@
+.env
+.vscode
+_site
+.DS_Store
+generated
+docs/exercices/files/tp1-completed
+docs/exercices/files/tp1-test
+docs/exercices/files/tp2-completed

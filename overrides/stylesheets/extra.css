@@ -1,0 +1,130 @@
+
+@font-face {
+    font-family: indivisa-title;
+    src: url("./Indivisa Text Sans-Black.ttf");
+}
+
+@font-face {
+    font-family: indivisa;
+    src: url("./Indivisa Text Sans-Regular.ttf");
+}
+
+canvas {
+    display: block;
+    border: 3mm ridge rgba(211, 40, 48, 0.6);
+}
+
+.md-typeset div.arithmatex {
+    overflow: hidden !important;
+}
+
+.md-nav,
+.md-header{
+    font-family: indivisa-title !important;
+}
+
+.md-typeset h1,
+.md-typeset h2, 
+.md-typeset h3{
+    font-family: indivisa-title;
+    font-weight: bold;
+}
+
+/* Hide main content for now */
+.md-content {
+    text-align: justify;
+}
+
+[data-md-color-scheme="unilasalle"] {
+    --md-primary-fg-color:        #DC3428;
+    --md-primary-fg-color--light: #e7816f;
+    --md-primary-fg-color--dark:  #90030C;
+
+    --md-accent-fg-color:                var(--md-default-fg-color--light);;
+    --md-accent-fg-color--transparent:   var(--md-default-fg-color);
+    --md-accent-bg-color:                hsla(0, 0%, 100%, 1);
+    --md-accent-bg-color--light:         hsla(0, 0%, 100%, 0.7);
+
+    --md-primary-button-color: var(--md-primary-fg-color)
+}
+
+[data-md-color-scheme="slate"] {
+    --md-primary-fg-color:        #00395C;
+    --md-primary-fg-color--light: #6eb6e4;
+    --md-primary-fg-color--dark:  #2f82b3;
+    --md-typeset-color:           var(--md-default-fg-color);
+    --md-typeset-a-color:         var(--md-primary-fg-color--light);
+    --md-hue: 210; /* [0, 360] */
+
+    --md-accent-fg-color:                var(--md-default-fg-color--light);
+    --md-accent-fg-color--transparent:   var(--md-default-fg-color);
+    --md-accent-bg-color:                hsla(0, 0%, 100%, 1);
+    --md-accent-bg-color--light:         hsla(0, 0%, 100%, 0.7);
+
+    --md-primary-button-color: var(--md-primary-fg-color--dark)
+  }
+
+.md-typeset a{
+    font-family: indivisa-title;
+}
+
+.md-typeset .md-button {
+    border: .1rem solid;
+    border-radius: .1rem;
+    color: var(--md-primary-button-color);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    padding: .625em 2em;
+    transition: color 125ms,background-color 125ms,border-color 125ms;
+}
+
+.md-typeset .md-button--primary {
+    background-color: var(--md-primary-button-color);
+    border-color: var(--md-primary-button-color);
+    color: var(--md-accent-bg-color);
+}
+
+.md-nav__item {
+    padding: 0 .6rem;
+    font-family: indivisa;
+}
+
+.unilogo {
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    height: 50px;
+    margin-right: 20px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+img {
+    height: auto;
+    width: auto;
+    padding: 4px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.img-no-border{
+    border-radius: 0 !important;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.img-no-padding{
+    padding: 0 !important;
+}
+
+
+.img-medium{
+    width: 50%;
+}
+
+.img-small{
+    width: 30%;
+}
+
+.img-tiny{
+    width: 15%;
+}

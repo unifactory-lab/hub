@@ -1,0 +1,169 @@
+# Replace the text below to customize your site
+site_name: Hub usine-école 4.0
+docs_dir: 'docs/'
+site_dir: 'generated/'
+
+site_description: Le hub UE-4.0 contient toutes les ressources numérique liée à l'usine école 4.0 d'UniLaSalle Amiens
+site_author: Jules Topart
+copyright: Copyright 2021 - Unilasalle Amiens - Creative Commons Attribution Non Commercial
+
+site_url: https://unifactory-lab.github.io/hub
+repo_url: https://github.com/unifactory-lab/hub
+repo_name: hub
+
+edit_uri: edit/main/docs/
+
+nav:
+  - Accueil: index.md
+  # - Cours: 
+  #   - Introduction: cours/intro.md
+  #   - cours/chap1/index.md
+  #   - cours/chap2/index.md
+  #   - "Chapitre 3 : L'ère numérique" :
+  #     - Introduction : cours/chap3/index.md
+  #     - Maquette numérique : cours/chap3/cao.md
+  #     - Jumeau numérique : cours/chap3/digital-twin.md
+  #     - Fabrication numérique : cours/chap3/fab.md
+  #     - Simulation physique : cours/chap3/simulation.md
+  #     - Robotique et Cobotique : cours/chap3/robotics.md
+  #     - Algorithme : cours/chap3/ia.md
+  #     - Sciences des données : cours/chap3/data.md
+  #     - Réalité augmentée : cours/chap3/vr.md
+  #   - "Chapitre 4 : Méthode d'implantation" :
+  #     - L'usine numérique : cours/chap4/intro.md
+  #     - cours/chap4/process.md
+  #     - cours/chap4/innov.md
+  #     - cours/chap4/projet.md
+  #   - "Chapitre 5 : Introduction à l'analyse numérique" : cours/chap5/index.md
+  #   - Résumé de cours : cours/sos.md
+  # - Exercices: 
+  #   - exercices/index.md
+  #   - Travaux dirirgée: 
+  #     - exercices/td1.md
+  #     - exercices/td2.md
+  #     - exercices/td3.md
+  #     - exercices/td4.md
+  #   - Travaux pratiques: 
+  #     - exercices/tp1.md
+  #     - exercices/tp2.md
+  #     - exercices/tp3.md
+  #     - exercices/tp4.md
+  #     - exercices/tp5.md
+  #     - exercices/tp6.md
+  #     - exercices/tp7.md
+  # - Documentation: 
+  #   - documentation/index.md
+  #   - documentation/contribute.md
+  #   - Logiciels :
+  #     - Dassault system :
+  #       - 3DExperience :
+  #         - documentation/software/3dexperience/3dx.md  
+  #         - documentation/software/3dexperience/getting-started.md
+  #         - documentation/software/3dexperience/3dx-design.md
+  #         - documentation/software/3dexperience/3dx-assembly.md
+  #         - documentation/software/3dexperience/3dx-simulate.md
+  #         - documentation/software/3dexperience/3dx-manufacture.md
+  #         - documentation/software/3dexperience/3dx-digital-twin.md
+  #         - documentation/software/3dexperience/3dx-robotics.md
+  #       - Solidworks :
+  #         - documentation/software/solidworks/solidworks.md
+  #     - Siemens :
+  #       - NX :
+  #         - documentation/software/nx/nx.md
+  #         - documentation/software/nx/getting-started.md
+  #         - documentation/software/nx/nx-design.md
+  #         - documentation/software/nx/nx-assembly.md
+  #         - documentation/software/nx/nx-simulate.md
+  #         - documentation/software/nx/nx-manufacture.md
+  #         - documentation/software/nx/nx-digital-twin.md
+  #       - TIA Portal :
+  #         - documentation/software/tia/tia.md
+  #         - documentation/software/tia/tia-ladder.md
+  #       - PLCSim :
+  #         - documentation/software/plcsim/plcsim.md
+  #       - SIMIT :
+  #         - documentation/software/simit/simit.md
+  #     - Schneider : 
+  #       - documentation/software/control-expert/control-expert.md
+  # - Archives: archives/index.md
+  # - Glossaire: glossaire.md
+
+theme:
+  language: fr
+  custom_dir: './overrides/'
+  name: material
+  palette:
+    - scheme: unilasalle
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+  font:
+    text: "indivisa"
+    code: Ubuntu Mono
+  icon:
+    logo : material/book
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - navigation.tracking
+    - search.suggest
+    - navigation.top
+
+extra:
+  social:
+    # For other social icons at https://squidfunk.github.io/mkdocs-material/setup/adding-social-links/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/JulesTopart
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/jules-topart/
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      fallback_to_build_date: true
+  - charts
+
+extra_javascript:
+  - theme/js/config.js
+  - https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/vega@5
+  - https://cdn.jsdelivr.net/npm/vega-lite@5
+  - https://cdn.jsdelivr.net/npm/vega-embed@6
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+- attr_list
+- pymdownx.keys
+- extra
+- meta
+- smarty
+- sane_lists
+- admonition
+- codehilite:
+    guess_lang: false
+- toc:
+    permalink: false
+- pymdownx.tasklist:
+    custom_checkbox: true
+    clickable_checkbox: true
+- pymdownx.emoji
+- pymdownx.details
+- pymdownx.tabbed
+- pymdownx.arithmatex:
+      generic: true
+- pymdownx.superfences:
+    custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format
+      - name: vegalite
+        class: vegalite
+        format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
