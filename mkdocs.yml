@@ -15,6 +15,40 @@ edit_uri: edit/main/docs/
 
 nav:
   - Accueil: index.md
+  # - Usines : 
+  #   - Usine école 4.0 :  line/am.line.md
+  #   - Mini-usine :  line/pop.corn.line.md
+  # - Cours : 
+  #   - Usine numérique : temp.md
+  #     - CM
+  #     - TD
+  #     - TP
+  #     - Exams (Archives)
+  #   - Robotique : temp.md
+  # - Projets :
+  #   - 5e année : temp.md
+  #   - 4e année : temp.md
+  #   - archives
+  # - Resources :
+  #   - Utils : 
+  #     - Fournisseurs / Achats : temp
+  #     - Planning : 
+  #   - Logiciels : 
+  #     - ...
+  #   - Documentation :
+  #     - elec
+  #     - pneu
+  #     - meca
+  #     - sofware
+  #   - 3D :
+  #     - Usines
+  #   - Programmes :
+  #     - Usines
+    
+
+
+    
+
   # - Cours: 
   #   - Introduction: cours/intro.md
   #   - cours/chap1/index.md
