@@ -3,8 +3,8 @@ site_name: Hub usine-école 4.0
 docs_dir: 'docs/'
 site_dir: 'generated/'
 
-site_description: Le hub UE-4.0 contient toutes les ressources numérique liée à l'usine école 4.0 d'UniLaSalle Amiens
-site_author: Jules Topart
+site_description: Bienvenue sur le site officiel de l'Usine École d'UniLaSalle Amiens, plateforme dédiée aux nouvelles technologies lié à l'industrie du futur.
+site_author: Jules Topart, Sebastian Gomes
 copyright: Copyright 2021 - Unilasalle Amiens - Creative Commons Attribution Non Commercial
 
 site_url: https://unifactory-lab.github.io/hub
@@ -14,7 +14,11 @@ repo_name: hub
 edit_uri: edit/main/docs/
 
 nav:
-  - Accueil: index.md
+  - Accueil : index.md
+  - Usines école : docs.md
+  - Cours : docs.md
+  - Projets : docs.md
+  - Ressource : docs.md
   # - Usines : 
   #   - Usine école 4.0 :  line/am.line.md
   #   - Mini-usine :  line/pop.corn.line.md
