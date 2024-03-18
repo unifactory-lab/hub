@@ -9,10 +9,12 @@
   <style>
 
     /* Application header should be static for the landing page */
+    
     .md-header {
       position: initial;
       transition: background-color 125ms, transform 125ms cubic-bezier(.1,.7,.1,1), box-shadow 0ms;
     }
+  
 
     /* Remove spacing, as we cannot hide it completely */
     .md-main__inner {
@@ -22,6 +24,7 @@
     .md-tabs {
       transition: background-color 125ms, transform 125ms cubic-bezier(.1,.7,.1,1), box-shadow 0ms;
     }
+    
     /* Hide main content for now */
     .md-content {
       display: none;
@@ -38,6 +41,15 @@
     @media screen and (min-width: 76.25em) {
       .md-sidebar--primary {
         display: none;
+      }
+    }
+
+
+        /* Hide footer */
+        @media screen and (min-width: 60em) {
+      .md-main {
+        background: linear-gradient(to top, var(--md-primary-fg-color--light) 90%,white);
+        --md-default-bg-color: white;
       }
     }
   </style>
@@ -59,15 +71,23 @@
         <!-- Hero content -->
         <div class="mdx-hero__content">
           <h1>Hub usine école 4.0</h1>
-          <p>{{ config.site_description }}.</p>
-          <a
-            href="{{ page.next_page.url | url }}"
-            title="{{ page.next_page.title | e }}"
-            class="md-button md-button--primary"
-          >
+
+              <p>{{ config.site_description }}.</p>
+          <h2>Formations proposées</h2> <!-- Présentation de la formation année / année -->
+          
+          <p>Description des enseignements année par année.</p>
+          
+          <h2>Modalités de formation</h2> <!-- Stage / Alternance / CP -->
+          
+          <p>Schema type: FISE vs FISA + Contrat PRO</p>
+          
+          
+          <a href="{{ page.next_page.url | url }}" title="{{ page.next_page.title | e }}" class="md-button md-button--primary">
             Commencer à apprendre
           </a>
+          <h2>Nous contacter</h2>
         </div>
+  
       </div>
     </div>
   </section>
