@@ -2,3 +2,4 @@ mkdocs
 mkdocs-git-revision-date-localized-plugin
 mkdocs-material
 mkdocs-charts-plugin
+neoteroi-mkdocs
