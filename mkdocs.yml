@@ -21,6 +21,16 @@ nav:
     - Robotique: class/robotics.md
     - Usine numerique: class/usine-numerique.md
 
+  - Exercices/TPs:
+
+    - Robotique:
+      - Fanuc:
+        - TP1 - Découverte et prise en main FANUC : exercices/tp.bvs.fanuc.1.md
+        - TP2 - Palettisation : exercices/tp.bvs.fanuc.2.md
+      - Universal Robots:
+        - TP1 - Découverte et prise en main UR: exercices/tp.bvs.ur.1.md
+        - TP2 - Contrôle et trajectoires avancés: exercices/tp.bvs.ur.2.md
+
   - Projets : 
     - Projets: projets/projets.md
     - Actionneur imp3D: projets/actionneur_imp_3d.md
