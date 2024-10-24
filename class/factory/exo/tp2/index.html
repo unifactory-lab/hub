@@ -1,0 +1,2249 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Bienvenue sur le site officiel de l'Usine École d'UniLaSalle Amiens, plateforme dédiée aux nouvelles technologies lié à l'industrie du futur.">
+      
+      
+        <meta name="author" content="Sebastian Gomez, Thomas Fiolet, Jules Topart">
+      
+      
+        <link rel="canonical" href="https://unifactory-lab.github.io/hub/class/factory/exo/tp2/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>TP 2 : Simulation physique numérique - Hub - Production Automatisée et Usine connectée</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=indivisa:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"indivisa";--md-code-font:"Ubuntu Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/neoteroi-mkdocs.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/pseudo-code.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="unilasalle" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tp-2-simulation-physique-numerique" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="header.title">
+        <a href="../../../.." title="Hub - Production Automatisée et Usine connectée"
+            class="md-header__button md-logo" aria-label="Hub - Production Automatisée et Usine connectée" data-md-component="logo">
+            
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12Z"/></svg>
+
+        </a>
+        <label class="md-header__button md-icon" for="__drawer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+        </label>
+
+        <img class="unilogo" src="https://unifactory-lab.github.io/hub/images/logo-unilasalle-white.png">
+
+        <div class="md-header__title" data-md-component="header-title">
+            <div class="md-header__ellipsis">
+                <div class="md-header__topic">
+                    <span class="md-ellipsis">
+                        Hub - Production Automatisée et Usine connectée
+                    </span>
+                </div>
+                <div class="md-header__topic" data-md-component="header-topic">
+                    <span class="md-ellipsis">
+                        
+                        TP 2 : Simulation physique numérique
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <form class="md-header__option" data-md-component="palette">
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="unilasalle"
+                data-md-color-primary="" data-md-color-accent="" 
+                aria-label="Switch to dark mode"  type="radio"
+                name="__palette" id="__palette_1">
+            
+            <label class="md-header__button md-icon" title="Switch to dark mode"
+                for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+            
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate"
+                data-md-color-primary="" data-md-color-accent="" 
+                aria-label="Switch to light mode"  type="radio"
+                name="__palette" id="__palette_2">
+            
+            <label class="md-header__button md-icon" title="Switch to light mode"
+                for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+            
+            
+        </form>
+        
+        
+        
+        
+        <div class="md-header__source">
+            <a href="https://github.com/unifactory-lab/hub" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hub
+  </div>
+</a>
+        </div>
+        
+    </nav>
+    
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+    
+  
+  Cours
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../projets/" class="md-tabs__link">
+          
+  
+    
+  
+  Projets
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../documentation.md" class="md-tabs__link">
+        
+  
+    
+  
+  Documentation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../ressources.md" class="md-tabs__link">
+        
+  
+    
+  
+  Ressources
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Hub - Production Automatisée et Usine connectée" class="md-nav__button md-logo" aria-label="Hub - Production Automatisée et Usine connectée" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12Z"/></svg>
+
+    </a>
+    Hub - Production Automatisée et Usine connectée
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/unifactory-lab/hub" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../robotics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Robotique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../meca/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Mécanique
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mécanique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meca/intro.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meca/intro.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Usine numerique
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Usine numerique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 1 : Contexte et définition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../chap2/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapitre 2 : L'ère numérique
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapitre 2 : L'ère numérique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/cao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maquette numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/digital-twin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jumeau numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/fab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fabrication numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation physique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/robotics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Robotique et Cobotique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/ia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sciences des données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap2/vr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Réalité augmentée
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../chap3/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapitre 3 : Méthode d'implantation
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_5" id="__nav_2_4_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Chapitre 3 : Méthode d'implantation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L'usine numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/process/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usine du futur - Approche processus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/innov/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managment de l&rsquo;innovation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap3/projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ingénieurie collaborative
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chap4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 4 : Introduction à l'analyse numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Résumé de cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_8" id="__nav_2_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Exercices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_8_2" id="__nav_2_4_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Travaux dirirgée
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Travaux dirirgée
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/td1.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/td2.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/td3.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/td4.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_8_3" id="__nav_2_4_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Travaux pratiques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Travaux pratiques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp1.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp2.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp3.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp4.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp5.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp6.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp7.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../projets/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Projets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../projets/actionneur_imp_3d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actionneur imp3D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../documentation.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ressources.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ressources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectifs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materiel-et-logiciel-necessaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matériel et logiciel nécessaire
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-pedagogique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Support pédagogique
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#telechargement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Téléchargement
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#travail-a-realiser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Travail à réaliser :
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-a-siemens-nx-mechatronics-concept-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partie A - Siemens NX Mechatronics concept designer :
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Partie A - Siemens NX Mechatronics concept designer :">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-importation-de-lassemblage" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Importation de l&rsquo;assemblage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-creation-des-corps-soumis-a-la-physique" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Création des corps soumis à la physique
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-creation-des-articulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Création des articulations
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-creation-des-controles-de-vitesse" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Création des contrôles de vitesse
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-creation-des-capteurs-et-des-corps-de-collision" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Création des capteurs et des corps de collision.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-creation-des-signaux-dentrees" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Création des signaux d&rsquo;entrées
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-creation-des-signaux-de-sorties" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Création des signaux de sorties
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-deplacement-de-lascenseur" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Déplacement de l&rsquo;Ascenseur
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-b-tia-portal-plcsim-advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partie B - TIA portal &amp; PLCSIM Advanced :
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Partie B - TIA portal & PLCSIM Advanced :">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ouvrir-le-projet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ouvrir le projet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interconnexion-wincc-tia-plsim-nx" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interconnexion WINCC - TIA - PLSIM - NX
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="tp-2-simulation-physique-numerique">TP 2 : Simulation physique numérique</h1>
+<p><img alt="" src="https://www.mait.de/assets/uploads/misc/NXMechatronics.png" /></p>
+<p>Réaliser un jumeau numérique d&rsquo;un système de production industrielle permet de :</p>
+<ul>
+<li>Simuler des interventions (Rétrofit, Amélioration continue &hellip; ) sans interrompre la production de la ligne physique</li>
+<li>Optimiser le cycle de production en simulant les différents mode de fonctionnenent</li>
+<li>Détecter des pannes et des divergence en amont de l&rsquo;implantation</li>
+<li>Concevoir le produit et le système de production conjointement.</li>
+</ul>
+<p>Dans ce TP nous allons nous interesser à la méthode à mettre en oeuvre pour réaliser un jumeau numérique basé sur les solutions Siemens.</p>
+<h2 id="objectifs">Objectifs</h2>
+<p>A partir de la liste des composant et du mode d&rsquo;emploi, préparer la configuration de l&rsquo;automate dans TIA Portal, afin de modifier le programme automate sans interompre l&rsquo;ascenseur.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Savoir importer et configurer un projet TIA Portal</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Savoir mettre en place un automate virtuel</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Connaitre la démarche de réalisation d&rsquo;un jumeau numérique 3D dans NX MCD</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Piloter un jumeau numérique entièrement fonctionnel depuis un automate virtuel.</li>
+</ul>
+<h2 id="materiel-et-logiciel-necessaire">Matériel et logiciel nécessaire</h2>
+<ul>
+<li>PC équipé avec<ul>
+<li>TIA Portal</li>
+<li>PLCSIM Advanced</li>
+<li>Siemens NX (+MCD)</li>
+</ul>
+</li>
+</ul>
+<h2 id="support-pedagogique">Support pédagogique</h2>
+<p>L&rsquo;ascenseur. Le prototype d&rsquo;ascenseur possède une cabine pouvant se déplacer entre 4 étage. Chaque étage est équipé de 3 fourche optique :</p>
+<ul>
+<li>Analyse fonctionnelle</li>
+<li>Analyse organique</li>
+<li>Manuel utilisateur</li>
+<li>Maquette d&rsquo;ascenseur</li>
+<li>Platine équipé d&rsquo;automate Siemens S200</li>
+</ul>
+<hr />
+<h2 id="telechargement">Téléchargement</h2>
+<div class="admonition example">
+<p class="admonition-title">Projet de Base</p>
+<ul>
+<li>Projet de base TIA : <a href="../files/tp2/TIA.zip">TIA.zip</a></li>
+<li>Projet de base NX  : <a href="../files/tp2/NX.zip">NX.zip</a></li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Documents</p>
+<ul>
+<li>Documentation adressage : <a href="../files/tp2/Documentation/adress.pdf">adress.pdf</a></li>
+<li>Liste des équipements : <a href="../files/tp2/Documentation/list-equipment.pdf">list-equipment.pdf</a></li>
+<li>Listes des E/S : <a href="../files/tp2/Documentation/list-io.pdf">list-io.pdf</a></li>
+</ul>
+</div>
+<details class="bug">
+<summary>Bug</summary>
+<ul>
+<li>Erreur lancement TIA Portal : <a href="../files/tp2/Documentation/error-start.pdf">error-start.pdf</a></li>
+<li>Erreur pupitre opérateur : <a href="../files/tp2/Documentation/error-panel.pdf">error-panel.pdf</a></li>
+</ul>
+</details>
+<p><a class="md-button md-button--primary" href="../files/tp2/TIA.zip">Télécharger le zip TIA</a>
+<a class="md-button" href="../files/tp2/NX.zip">Télécharger le zip NX</a></p>
+<h2 id="travail-a-realiser">Travail à réaliser :</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Configurer les compposant de la platine dans TIA portal</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Créer un automate virtuel dans PLCSIM Advanced</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Connecter l&rsquo;automate virtuel à TIA Portal</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Connecterl&rsquo;automate virtuel avec le jumeau virtuel sous NX</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Configurer la simulation physique sous NX</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Simuler le programme automate et modifier le programme automate sans interruption de fonctionnement</li>
+</ul>
+<h2 id="partie-a-siemens-nx-mechatronics-concept-designer">Partie A - Siemens NX Mechatronics concept designer :</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Importer l&rsquo;assemblage de l&rsquo;ascenseur</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Créer les corps physique de la simulation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Créer les articulations</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Créer les contrôle de vitesse</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Créer les capteur</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Créer les corps de collision</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Créer les signaux de la simulation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Créer les expressions d&rsquo;adaptation des signaux</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Connecter les signaux à l&rsquo;automate</li>
+</ul>
+<h3 id="1-importation-de-lassemblage">1. Importation de l&rsquo;assemblage</h3>
+<p>Commençons par créer un nouveau projet. Pour cela, créez un nouveau dossier sur la session. Renommez le dossier <code>tp2_digitaltwin_nom_promo</code> (ex : <code>tp2_digitaltwin_JulesTOPART_I5GSPA</code>).
+Dans ce dossier, téléchargez puis décompressez les fichiers <a href="../files/tp2/NX.zip">Assembly.zip</a> puis, lancer <strong>Siemens Mecatronics concept designer</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Si NX ne se lance pas et affiche un message d&rsquo;erreur lié à un problème de licence, suivez ce <a href="../documentation/software/nx/nx-licence.md">tutoriel</a></p>
+</div>
+<p>Une fois que le logiciel NX est correctement démarré, cliquez sur l&rsquo;icône <strong>Ouvrir</strong>  en haut à gauche de l&rsquo;interface.
+Dans l&rsquo;explorer selectionnez <code>Assembly.prt</code> dans votre répertoire projet.</p>
+<p><img alt="" src="../images/tp2/assembly.jpg" /></p>
+<h3 id="2-creation-des-corps-soumis-a-la-physique">2. Création des corps soumis à la physique</h3>
+<p>NX MCD permet de simuler fidèlement un système mécatronique en mouvement. Pour cela il faut toutefois paramétrer la simulation de manière à la rendre réaliste. NX est capable de simuler les comportements cinématique des objets en tenant compte de la force de gravite, des force de frottement&hellip; Toutefois la simulation suppose l&rsquo;utilisation de matériaux indéformable et homogène.</p>
+<p>Afin d&rsquo;alléger la simulation, NX permet de ne soumettre que quelques corps à une lois physique. Par défaut aucun corps n&rsquo;est selectionner. Il nous faut donc lui communiquer quel corps doit simuler la gravité et lesquel simule un capteur par exemple. C&rsquo;est cela que nous allons configurer maintenant.</p>
+<p>Pour commencer, rendez dans l&rsquo;application <strong>Mécatronic concept designer</strong> depuis l&rsquo;onglet <strong>Application</strong>.</p>
+<p><img alt="" src="../images/tp1/mechatro-toolbar.jpg" /></p>
+<p>Un fois dans MCD, selectionnez l&rsquo;outil <strong>Corps rigide</strong> dans le groupe <strong>Mécanique</strong>.</p>
+<p><img alt="" src="../images/tp2/rigidBody-toolbar.jpg" /></p>
+<p>Nous allons maintenant créer un corps physique rigide (indéformable) soumis au loi de la physique dans notre simulation. Ici les objets soumis à la phisyque sont :</p>
+<ul>
+<li>La cabine d&rsquo;ascenseur</li>
+<li>Les portes de chaque étages</li>
+</ul>
+<p>Aucune autres pièces ne doit se déplacer. Nous aurons donc 5 <em>Corps rigide</em> dans l&rsquo;arbre du <strong>navigateur physique</strong>.
+Selectionner la cabine d&rsquo;ascenseur dans sont intégralité (En utilisant l&rsquo;arbre du <a href="../tp1/#2-importation-dun-composant-existant">navigateur d&rsquo;assemblage</a>)</p>
+<p>Pour cette exemple nous laisserons les paramètre de masse et d&rsquo;inertie à leur valeurs automatiques. </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Il est possible d&rsquo;afiner les paramètres de simulation en donnant précisément la masse des éléments ou encore en précisant leur moment d&rsquo;inertie. On peut alors simuler le comportement cinématique d&rsquo;objet dont la répartition du poinds n&rsquo;est pas homogène. La plupart des logiciel de CAO moderne permettent d&rsquo;obtenir ces données pour peu que la maquette numérique soit suffisamment détaillée. Notons aussi qu&rsquo;il est possible d&rsquo;attribuer des étiquettes à des objets afin de simuler les intéractions entre plusieurs objets de manière optimisée. Par exemple si je créer des objets ayant une étiquette A, il n&rsquo;interagirons pas avec les objets ayant l&rsquo;étiquette B. Cela permet de fluidifier la simulation en évitant de couteux calcul au CPU.</p>
+</div>
+<p>Renommez le corps rigide en <code>RB-Cabine</code> (<strong>RB</strong> pour <strong>Rigid body</strong>) puis valider avec <strong>Appliquer</strong>.</p>
+<p><img alt="" src="../images/tp2/rigidBody-selection.jpg" /></p>
+<p>Répéter cette opération afin de créer les corps rigide suivants : </p>
+<ul>
+<li>RB-Porte0</li>
+<li>RB-Porte1</li>
+<li>RB-Porte2</li>
+<li>RB-Porte3</li>
+</ul>
+<p><img alt="" src="../images/tp2/rigidBody-finalTree.jpg" /></p>
+<p>Désormais, tout ces RigidBody obéissent à la gravité. Utiliser le bouton <strong>Jouer</strong> pour lancer la simulation.</p>
+<iframe width="889" height="530" src="https://www.youtube.com/embed/AjnXio9cbh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Vous pouvez essayer d&rsquo;intéragir avec les objets de la simulation en utilisant la souris (drag &amp; drop). Il est également possible de créer des boutons (ARU) ainsi que des voyants dans la simulation.</p>
+</div>
+<h3 id="2-creation-des-articulations">2. Création des articulations</h3>
+<p>Afin de contraindre les corps rigides crées précédemment, nous allons maintenant créer les articulations. 
+Pour commencer, créons une articulation glissière entre la cabine et la le repère principal.</p>
+<p>Cliquez d&rsquo;abord sur <strong>articulation de glissement</strong> dans la rubrique <strong>Mécanique</strong></p>
+<p><img alt="" src="../images/tp2/joint-toolbar.jpg" /></p>
+<p>Selectionnez ensuite la cabine comme objet à contraindre, mais laissez la base vide. De cette façon, NX contraindra la cabine par rapport au repère global (Sans quoi nous aurions du créer une corps rigique fixe ayant pour composant le chassis de l&rsquo;ascenseur).</p>
+<p><img alt="" src="../images/tp2/joint-selection.jpg" /></p>
+<p>Et enfin, spécifer le vecteur. Selectionner un verteur vertical. Notons l&rsquo;on donnera plus tard une vitesse de déplacement à la cabine. Une vitesse positive fera monter l&rsquo;ascenseur et une valeur négative contrôlera la descente. Si le vecteur est dirigé vers le bas cela inversera cette configuration.</p>
+<p><img alt="" src="../images/tp2/joint-vector.jpg" /></p>
+<p>Renommez la liason en <code>JT-Cabine-slider</code> puis Valider avec OK.</p>
+<p>Si vous essayer maintenant de lancer la simulation, vous ne remarquerez aucun changement flagrant. Pourtant nous avons contraint la cabine à un déplacement selon un seul axe. Elle ne peut pas tourner sur elle même par exemple contrairement au porte.</p>
+<iframe width="889" height="530" src="https://www.youtube.com/embed/XMkd3OgYclw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>Recommencez maintenant ce processus afin de contraindre les 4 portes en utilisant une <strong>contrainte de glissement</strong> vers <strong>X positif</strong>.</p>
+<p><img alt="" src="../images/tp2/joint-horizontalVector.jpg" /></p>
+<p>Renommez les liasons afin d&rsquo;obtenir l&rsquo;abre suivant dans le navigateur physique (<strong>JT</strong> pour <strong>Joint</strong>): </p>
+<p><img alt="" src="../images/tp2/joint-fully.jpg" /></p>
+<p>Si vous tentez maintenant de lancer la simulation, vous remarquerez que seul la cabine continue de tomber. En effet, elle est soumise à une force vertical (la gravité) qui est orienté dans le même sens que son axe de glissement. Par conséquent, elle tombe avec une accélération de :</p>
+<p><em>a = cos(0).g = g</em></p>
+<h3 id="3-creation-des-controles-de-vitesse">3. Création des contrôles de vitesse</h3>
+<p>Nous allons mainteant contraindre nos RigidBody en termes de vitesse pour pouvoir les contrôler grâce à l&rsquo;automate.
+Commencons par ouvrir le menu de <strong>Contrôle de vitesse</strong> situté dans le groupe <strong>Electrique</strong> de l&rsquo;onglet <strong>Acceuil</strong>.</p>
+<p><img alt="" src="../images/tp2/control-toolbar.jpg" /></p>
+<p>Selectionner ensuite l&rsquo;une des articulation glissière créée précédemment, puis renommer le contrôle en <code>CT-Porte0-slider-speed</code>.</p>
+<p><img alt="" src="../images/tp2/control-selection.jpg" /></p>
+<p>Répétez pour chaque liason afin d&rsquo;obtenir l&rsquo;arbre suivant : </p>
+<p><img alt="" src="../images/tp2/control-tree.jpg" /></p>
+<p>Si vous lancez la simulation maintenant, aucune des pièces ne devrait se déplacer car nous leur avont imposer une vitesse de déplacement constante de 0mm/s.
+Essayer de modifier la vitesse d&rsquo;une des corps en éditant le contrôle nouvellement créé.</p>
+<h3 id="4-creation-des-capteurs-et-des-corps-de-collision">4. Création des capteurs et des corps de collision.</h3>
+<p>NX offre la possibilité de simuler une large gamme de capteurs, des capteurs de contacts ou de distance jusqu&rsquo;à tout d&rsquo;encodeurs.</p>
+<p>Notre ascenseur est doté de fourche optique TOR (Tout ou rien) que nous simulerons par des capteurs de distance très courte portée.
+Sous NX les capteurs de distance sont capable de calculer la distance qui les sépare d&rsquo;un objet. Il est aussi possible de lui faire retourner un booléen lorsqu&rsquo;un objet entre dans son champ. Ici encore et par soucis d&rsquo;optimisation il nous faudra préciser quels objet sont compris dans les calculs de collision. Il nous faudra donc créer des corps de collision.</p>
+<p>Les fourches optiques de notre système sont utile pour détecter l&rsquo;état des portes (ouvertes ou fermées) ainsi que la position de l&rsquo;ascenseur (étage). Il nous faut donc définir les portes et la cabine comme corps de collisions pour qu&rsquo;il soit détectable par nos capteurs. Toutefois nous ne selectionneront que les surfaces utile à la detection.</p>
+<p>Commençons par ouvrir l&rsquo;outils de création de <strong>Corps de collisions</strong> située dans la rubrique <strong>Mécanique</strong>.</p>
+<p><img alt="" src="../images/tp2/collider-toolbar.jpg" /></p>
+<p>Selectionner ensuite la petite surface détectable par la fourche de présence cabine situé en bas à gauche de la cabine.</p>
+<p><img alt="" src="../images/tp2/collider-selection.jpg" /></p>
+<p>Puis renommer le corps de collission : <code>CB-Cabine</code>. Enfin, validez en laissant les paramètre par défaut :</p>
+<p><img alt="" src="../images/tp2/collider-rename.jpg" /></p>
+<p>Répeter cette opération pour les 4 portes (en selectionnant la face avant de chaque porte) afin d&rsquo;oobtenir l&rsquo;arbre suivant :</p>
+<p><img alt="" src="../images/tp2/collider-tree.jpg" /></p>
+<p>Nous pouvons désormais ajouter les capteurs. Pour créer un capteur mobile il est possible d&rsquo;attacher le capteur à un corps rigide pour les synchroniser. Comme ici nos capteurs sont fixe, pas besoin de selectionner de corps rigide.</p>
+<p>Ouvrez le menu de création de <strong>capteurs de distance</strong> située dans la rubrique <strong>Électrique</strong>.</p>
+<p><img alt="" src="../images/tp2/sensor-toolbar.jpg" /></p>
+<p>A l&rsquo;aide de l&rsquo;outil <strong>Point sur Face</strong>, selectionnez la face vertical opposée à la surface à détecter. Essayer de placer le point au centre de la face.</p>
+<p><img alt="" src="../images/tp2/sensor-surfacePoint.jpg" /></p>
+<p><img alt="" src="../images/tp2/sensor-selection.jpg" /></p>
+<p>En guise de paramètre, nous réduirons le champ d&rsquo;action des capteur à 8mm et à 10° d&rsquo;angle. Selectionner ensuite le vecteur normal à la face du capteur pour obtenir un aperçu comme ci-dessous :</p>
+<p><img alt="" src="../images/tp2/sensor-vector.jpg" /></p>
+<p>Répéter avec tout les autres capteurs pour obtenir l&rsquo;arbre suivant : </p>
+<p><img alt="" src="../images/tp2/sensor-tree.jpg" /></p>
+<h3 id="5-creation-des-signaux-dentrees">5. Création des signaux d&rsquo;entrées</h3>
+<p>Maintenant que les capteurs et les actionneurs sont configuré, nous pouvons définir les signaux qui contrôleront la simulation. Comme dans un API, la simulation possède des signaux d&rsquo;entrée et de sortie. Ici les sortie seront les capteurs puisque cette information doit remonter à l&rsquo;automate. Les entrées seront les ordres de contrôles des actionneurs.</p>
+<p>Pour simplifier la simulation nous n&rsquo;utiliserons que des signaux booléen. Toutefois nous devrons convertir certain de ces signaux en vitesse pour contrôler les actionneurs.</p>
+<p>Commençons par créer les signaux d&rsquo;entrée permettant de faire monter et descendre la cabine. Ouvrez le menu de création de <strong>signaux</strong> situé dans la rubrique <strong>Électrique</strong>.</p>
+<p><img alt="" src="../images/tp2/signal-toolbar.jpg" /></p>
+<p>Créer ensuite un signal booléen d&rsquo;entrée appelé : <code>MOT_CAB_UP</code> puis validez.</p>
+<p><img alt="" src="../images/tp2/signal-bool.jpg" /></p>
+<p>Les signaux doivent appartenir à des tables de signaux. Ici nous n&rsquo;utiliserons qu&rsquo;une seule table des signaux. Créer donc une nouvelle table en cliquant sur l&rsquo;icône en bas à gauche de la fenêtre d&rsquo;<strong>ajout de signal</strong>, puis renommer la table <code>Signaux internes</code></p>
+<p><img alt="" src="../images/tp2/signal-new-table.jpg" /></p>
+<p>Répeter l&rsquo;opération (sans recréer de nouvelle table) afin de créer le signal <code>MOT-CAB-DOWN</code>.</p>
+<p>Puis Créer les signaux booléen d&rsquo;entrée de commandes des portes pour obtenir l&rsquo;arbre suivant : </p>
+<p><img alt="" src="../images/tp2/signal-in-tree.jpg" /></p>
+<h3 id="6-creation-des-signaux-de-sorties">6. Création des signaux de sorties</h3>
+<p>Nous allons maintenant configurer les signaux de sortie. Pour cela il faut répétez le processus précédent en attachant un paramètre physique existant, ici l&rsquo;état des capteurs de distance.</p>
+<p>Cochez la case <strong>Connecter avec un paramètre Runtime</strong> puis selectionner le paramètre <strong>déclenché</strong> pour que la sortie soit configuré sur un paramètre booléen (TOR).</p>
+<p><img alt="" src="../images/tp2/signal-out-selection.jpg" /></p>
+<p>Renommez le signal <code>CPT_CAB_0</code> puis validez avec <strong>OK</strong>.</p>
+<p>Répétez jusqu&rsquo;a obtenir l&rsquo;arbre suivant :</p>
+<p><img alt="" src="../images/tp2/signal-tree.jpg" /></p>
+<h3 id="7-deplacement-de-lascenseur">7. Déplacement de l&rsquo;Ascenseur</h3>
+<p>Nous avons terminer la création des signaux d&rsquo;entrée et de sorties, nous devrons ensuite les connecter avec les variables automates.
+Toutefois, bien que nous ayons créé les signaux <strong>MOT_CAB_UP</strong> et <strong>MOT_CAB_DOWN</strong>, les contrôleurs de vitesse ne peuvent être contrôlé avec des booléen. Nous devons par conséquent convertir ces signaux booléen en une vitesse en mm/s.</p>
+<p>Pour cela vous aller créer un bloc d&rsquo;expression dans les <strong>Comportements Runtime</strong>. C&rsquo;est à dire que nous allons modifier le comportement des objets physique que nous simulons.</p>
+<p><img alt="" src="../images/tp2/exp-toolbar.jpg" /></p>
+<p>Un bloc d&rsquo;expression permet d&rsquo;écrire une nouvelle loi de simulation. Cette loi possèdera des entrées, et des sorties.
+Ici les entrées seront nos paramètre booléen, et notre sorties sera une commande de vitesse en mm/s.
+Commencez par renommer le bloc d&rsquo;expression en <code>BE-Cabine</code> (<strong>BE</strong> pour <strong>Behavior</strong>).</p>
+<p>Créez ensuite 2 entrées à l&rsquo;aide du bouton de droite : </p>
+<ul>
+<li><strong>IN_CAB_UP</strong></li>
+<li><strong>IN_CAB_DOWN</strong></li>
+</ul>
+<p><img alt="" src="../images/tp2/exp-new-input.jpg" /></p>
+<p>Ascossié ensuite les Entrée avec leurs signaux respectifs : </p>
+<p><img alt="" src="../images/tp2/exp-link-input.jpg" /></p>
+<p>Créer ensuite une sortie appelée <code>OUT_CAB_SPEED</code>. Cette sortie sera une <strong>Vitesse</strong> en <strong>mm/s</strong></p>
+<p><img alt="" src="../images/tp2/exp-out.jpg" /></p>
+<p>Liez ensuite la sortie a <strong>CT-Cabine-slider-speed</strong>.
+Dans le dernière onglets du Bloc d&rsquo;expression, selectionner <strong>OUT_CAB_SPEED</strong> puis entrez une formule afin de donner à l&rsquo;ascenseur une <strong>vitesse positive</strong> pour le faire <strong>monter</strong> ou <strong>négative</strong> pour le faire <strong>descendre</strong>.</p>
+<p><img alt="" src="../images/tp2/exp-formula.jpg" /></p>
+<p>Répétez le même processus pour créer un bloc d&rsquo;expression qui contrôlera les portes&hellip;</p>
+<h2 id="partie-b-tia-portal-plcsim-advanced">Partie B - TIA portal &amp; PLCSIM Advanced :</h2>
+<p>Le programme  automate est déjà pré-écrit dans le fichier <code>TIA.zip</code>. Cependant ce programme comporte des erreurs que vous devez corriger en vous appuyant sur le jumeau numérique.
+Voici le Grafcet théorique du fonctionnement de l&rsquo;automate : </p>
+<p><img alt="" src="../files/tp2/Documentation/graphcet.png" /></p>
+<p>Maintenant que tout les signaux sonts créé, nous allons configurer l&rsquo;automate virtuel le connecter à la simulation.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Créer un nouveau projet</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Ajouter les composants<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Ajouter le CPU (ET 200SP CPU - CPU 1512SP F-1 PN - 6ES7 512-1SK01-0AB0)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Ajouter les 4 Entrées DI 8x24VDC HF 6ES7131-6BF00-0CA0</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Ajouter les 4 Sorties DQ 8x24VDC HF 6ES7132-6BF00-0CA0</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Connecter le PC et l&rsquo;API Virtuel<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Démarer l&rsquo;automate virtuel dans PLCSIM Advanced</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Cliquer sur le switch réseau de l&rsquo;API</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Dans les propriétés, cliquer sur adresses Ethernet</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Ajouter un sous réseau</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Définir l&rsquo;IP de l&rsquo;automate virtuel dans le projet</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Simuler l&rsquo;interface graphique sous TIA<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Configurer l&rsquo;IP de l&rsquo;interface virtuel</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Connecter l&rsquo;interface virtuel à l&rsquo;automate virtuel</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Mettre à jour le programme pour faire fonctionner le dernière étage.</li>
+</ul>
+<h3 id="ouvrir-le-projet">Ouvrir le projet</h3>
+<p>Dans le dossier TIA de votre dossier de travail ouvrez le fichier <code>Ascenseur_UniLaSalle_VB6.ap16</code> avec <strong>TIA Portal</strong>.
+Lancer ensuite le logiciel <strong>PLCSIM Adv V3.0</strong></p>
+<p>Aller dans la vue du projet puis rendez vous dans la configuration de l&rsquo;automate (PLC_1). Double-cliquez sur <strong>Configuration des appareils</strong>.</p>
+<p><img alt="" src="../images/tp2/TIA-PLC-config-tree.jpg" /></p>
+<p>Ouvrez ensuite <strong>PLCSIM Advanced v3.0</strong> et créez un nouvel automate virtuel <strong>ET 200SP</strong>, nommez le <strong>API-TP</strong>.
+Cliquer sur <strong>Start</strong> pour démarer l&rsquo;automate virtuel.</p>
+<p>Dans <strong>TIA Portal</strong> double-cliquez  sur l&rsquo;automate.</p>
+<p><img alt="" src="../images/tp2/TIA-automate.jpg" /></p>
+<p>Dans les propriétés de l&rsquo;automate rendez vous dans la rubrique <strong>Interface PROFINET</strong>, et renseignez l&rsquo;IP de l&rsquo;automate virtuel (Par défaut : <code>192.168.0.1</code>).</p>
+<p><img alt="" src="../images/tp2/TIA-PLC-profinet.jpg" /></p>
+<p>Dans l&rsquo;arbre de gauche, selectionner <strong>PLC_1 [CPU 1512&hellip;]</strong> puis cliquer sur Charger dans l&rsquo;automate dans la <strong>barre d&rsquo;outils</strong>. </p>
+<p><img alt="" src="../images/tp2/TIA-PLC-upload.jpg" /></p>
+<p>Valider en cliquant sur charger pour envoyer le programme et la configuration dans l&rsquo;automate virtuel.</p>
+<p>Dans <strong>PLCSIM Advanced</strong>, Selectionner l&rsquo;automate puis passer le en mode <strong>RUN</strong>.</p>
+<p><img alt="" src="../images/tp2/PLCSIM-run-API.jpg" /></p>
+<h3 id="interconnexion-wincc-tia-plsim-nx">Interconnexion WINCC - TIA - PLSIM - NX</h3>
+<p>Pour terminer, retourner dans <strong>Siemens Mecatronics concept designer</strong>. Dans la rubrique automatisation, ouvrez <strong>Configuration de signal externe</strong>.</p>
+<p><img alt="" src="../images/tp2/signal-extern-config-toolbar.jpg" /></p>
+<p>Dans l&rsquo;onglet PLCSIM, selectionnez l&rsquo;automate API-TP puis cliquer sur <strong>Mettre à jour les Balises</strong>. Enfin, selectionnez toutes les balises.</p>
+<p><img alt="" src="../images/tp2/signal-extern-config.jpg" /></p>
+<p>Nous allons maintenant faire correspondre les signaux de la simulation avec les variable API. Pour cela rendez vous dans la rubrique <strong>Automatisation</strong> et ouvrez l&rsquo;outil <strong>Corresp. de signaux</strong>.</p>
+<p><img alt="" src="../images/tp2/signal-extern-match-toolbar.jpg" /></p>
+<p>Cliquer ensuite sur <strong>Executer correspondance auto</strong> ou assoscier les signaux mannuellement. </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Notons qu&rsquo;il est important que les variable API et les signaux aient le même nom pour faciliter le processus.</p>
+</div>
+<p>Validez avec <strong>OK</strong>.</p>
+
+
+<!-- Last updated date -->
+
+<hr />
+<div class="md-source-date">
+  <small>
+    
+      Auteur :  Sebastian Gomez, Thomas Fiolet, Jules Topart - 
+    
+    <!-- mkdocs-git-revision-date-localized-plugin -->
+    
+      Dernière mise à jour: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">24 octobre 2024</span>
+
+      
+
+    <!-- mkdocs-git-revision-date-plugin -->
+    
+  </small>
+</div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2021 - Unilasalle Amiens - Creative Commons Attribution Non Commercial
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "search.suggest", "navigation.footer", "navigation.top", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../../../../js/mkdocs-charts-plugin.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+      
+        <script src="../../../../theme/p5.min.js"></script>
+      
+        <script src="../../../../theme/p5.fillGradient.js"></script>
+      
+        <script src="../../../../theme/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/1.5.2/math.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
+      
+    
+  </body>
+</html>

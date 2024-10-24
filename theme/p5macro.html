@@ -1,0 +1,81 @@
+{% macro sketch(name, legend='', value='') -%}
+<figure>
+<div id={{name}} class="sketch"></div>
+<figcaption>{{ legend }}</figcaption>
+</figure>
+<script>
+{
+let sketch = function(p) { {{ value }} }
+
+window.addEventListener('load', () => { 
+    let p5_instance = new p5(sketch, {{name}} );});
+};
+</script>
+{%- endmacro %}
+
+
+
+
+
+{% macro staticSketch(name, legend='', value='') -%}
+<figure>
+<div id={{name}} class="sketch"></div>
+<figcaption>{{ legend }}</figcaption>
+</figure>
+<script>
+{
+let sketch = function(p) { 
+p.setup = function() {
+    {{ value }} }
+};
+
+var p5_instance = undefined;
+
+setTimeout(function(){ p5_instance = new p5(sketch, {{name}} ); },1000)
+}
+</script>
+{%- endmacro %}
+
+
+
+
+
+
+{% macro plot(name, legend='', value='') -%}
+<figure>
+<div id={{name}} class="charts"></div>
+<figcaption>{{ legend }}</figcaption>
+</figure>
+<script>
+{
+    const options = { 
+        target: '#{{name}}',
+        {{value}} };
+
+
+setTimeout(function(){ functionPlot(options); },1000);
+}
+</script>
+{%- endmacro %}
+
+
+
+
+
+
+
+{% macro pseudocode(name, value="") -%}
+
+<pre id="{{name}}" class="pseudocode">
+
+{{value}}
+
+</pre>
+
+<script>
+    setTimeout(function(){ pseudocode.render(document.getElementById("{{name}}").textContent,  document.getElementById("{{name}}"), {linenNumber: true, noEnd: false}); },1000);
+</script>
+
+{%- endmacro %}
+
+

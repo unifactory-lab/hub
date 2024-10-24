@@ -1,0 +1,2643 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Bienvenue sur le site officiel de l'Usine École d'UniLaSalle Amiens, plateforme dédiée aux nouvelles technologies lié à l'industrie du futur.">
+      
+      
+        <meta name="author" content="Sebastian Gomez, Thomas Fiolet, Jules Topart">
+      
+      
+        <link rel="canonical" href="https://unifactory-lab.github.io/hub/class/factory/chap4/">
+      
+      
+        <link rel="prev" href="../chap3/projet/">
+      
+      
+        <link rel="next" href="../sos/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Chapitre 4 : Introduction à l'analyse numérique - Hub - Production Automatisée et Usine connectée</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=indivisa:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"indivisa";--md-code-font:"Ubuntu Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/neoteroi-mkdocs.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/pseudo-code.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="unilasalle" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapitre-4-introduction-a-lanalyse-numerique" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="header.title">
+        <a href="../../.." title="Hub - Production Automatisée et Usine connectée"
+            class="md-header__button md-logo" aria-label="Hub - Production Automatisée et Usine connectée" data-md-component="logo">
+            
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12Z"/></svg>
+
+        </a>
+        <label class="md-header__button md-icon" for="__drawer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+        </label>
+
+        <img class="unilogo" src="https://unifactory-lab.github.io/hub/images/logo-unilasalle-white.png">
+
+        <div class="md-header__title" data-md-component="header-title">
+            <div class="md-header__ellipsis">
+                <div class="md-header__topic">
+                    <span class="md-ellipsis">
+                        Hub - Production Automatisée et Usine connectée
+                    </span>
+                </div>
+                <div class="md-header__topic" data-md-component="header-topic">
+                    <span class="md-ellipsis">
+                        
+                        Chapitre 4 : Introduction à l'analyse numérique
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <form class="md-header__option" data-md-component="palette">
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="unilasalle"
+                data-md-color-primary="" data-md-color-accent="" 
+                aria-label="Switch to dark mode"  type="radio"
+                name="__palette" id="__palette_1">
+            
+            <label class="md-header__button md-icon" title="Switch to dark mode"
+                for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+            
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate"
+                data-md-color-primary="" data-md-color-accent="" 
+                aria-label="Switch to light mode"  type="radio"
+                name="__palette" id="__palette_2">
+            
+            <label class="md-header__button md-icon" title="Switch to light mode"
+                for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+            
+            
+        </form>
+        
+        
+        
+        
+        <div class="md-header__source">
+            <a href="https://github.com/unifactory-lab/hub" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hub
+  </div>
+</a>
+        </div>
+        
+    </nav>
+    
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Cours
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projets/" class="md-tabs__link">
+          
+  
+    
+  
+  Projets
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../documentation.md" class="md-tabs__link">
+        
+  
+    
+  
+  Documentation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../ressources.md" class="md-tabs__link">
+        
+  
+    
+  
+  Ressources
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Hub - Production Automatisée et Usine connectée" class="md-nav__button md-logo" aria-label="Hub - Production Automatisée et Usine connectée" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12Z"/></svg>
+
+    </a>
+    Hub - Production Automatisée et Usine connectée
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/unifactory-lab/hub" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../robotics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Robotique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../meca/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Mécanique
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mécanique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meca/intro.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meca/intro.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Usine numerique
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Usine numerique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 1 : Contexte et définition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../chap2/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapitre 2 : L'ère numérique
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapitre 2 : L'ère numérique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap2/cao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maquette numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap2/digital-twin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jumeau numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap2/fab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fabrication numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap2/simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation physique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap2/robotics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Robotique et Cobotique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap2/ia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap2/data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sciences des données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap2/vr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Réalité augmentée
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../chap3/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapitre 3 : Méthode d'implantation
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_5" id="__nav_2_4_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Chapitre 3 : Méthode d'implantation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap3/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L'usine numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap3/process/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usine du futur - Approche processus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap3/innov/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managment de l&rsquo;innovation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chap3/projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ingénieurie collaborative
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapitre 4 : Introduction à l'analyse numérique
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 4 : Introduction à l'analyse numérique
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-et-differenciation-numerique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intégration et Différenciation Numérique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Intégration et Différenciation Numérique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bases-de-lintegration-numerique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bases de l&rsquo;Intégration Numérique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bases de l’Intégration Numérique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept-des-sommes-de-riemann" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept des Sommes de Riemann
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regle-du-trapeze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Règle du Trapèze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regle-de-simpson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Règle de Simpson
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples-et-exercices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemples et Exercices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points-cles-a-retenir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points Clés à Retenir
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differenciation-numerique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différenciation Numérique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Différenciation Numérique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#difference-avancee-forward-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différence Avancée (Forward Difference)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference-retardee-backward-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différence Retardée (Backward Difference)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference-centree-central-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différence Centrée (Central Difference)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyse-des-erreurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse des Erreurs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples-et-exercices_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemples et Exercices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points-cles-a-retenir_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points Clés à Retenir
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-2-resolution-des-equations-differentielles-ordinaires-edo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partie 2 : Résolution des Équations Différentielles Ordinaires (EDO)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Partie 2 : Résolution des Équations Différentielles Ordinaires (EDO)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methode-deuler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthode d&rsquo;Euler
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthode d’Euler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#derivation-a-partir-de-la-serie-de-taylor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dérivation à partir de la série de Taylor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-et-exemples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implémentation et Exemples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-3-methode-des-differences-finies-mdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partie 3 : Méthode des Différences Finies (MDF)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-4-regression-et-ajustement-de-courbes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partie 4 : Régression et Ajustement de Courbes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-5-exemples-dapplication-et-exercices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partie 5 : Exemples d&rsquo;Application et Exercices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Résumé de cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_8" id="__nav_2_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Exercices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_8_2" id="__nav_2_4_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Travaux dirirgée
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Travaux dirirgée
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/td1.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/td2.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/td3.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/td4.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_8_3" id="__nav_2_4_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Travaux pratiques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Travaux pratiques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/tp1.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/tp2.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/tp3.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/tp4.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/tp5.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/tp6.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercices/tp7.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../projets/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Projets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projets/actionneur_imp_3d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actionneur imp3D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../documentation.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ressources.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ressources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-et-differenciation-numerique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intégration et Différenciation Numérique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Intégration et Différenciation Numérique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bases-de-lintegration-numerique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bases de l&rsquo;Intégration Numérique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bases de l’Intégration Numérique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept-des-sommes-de-riemann" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept des Sommes de Riemann
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regle-du-trapeze" class="md-nav__link">
+    <span class="md-ellipsis">
+      Règle du Trapèze
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regle-de-simpson" class="md-nav__link">
+    <span class="md-ellipsis">
+      Règle de Simpson
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples-et-exercices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemples et Exercices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points-cles-a-retenir" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points Clés à Retenir
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#differenciation-numerique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différenciation Numérique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Différenciation Numérique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#difference-avancee-forward-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différence Avancée (Forward Difference)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference-retardee-backward-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différence Retardée (Backward Difference)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#difference-centree-central-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Différence Centrée (Central Difference)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analyse-des-erreurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse des Erreurs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples-et-exercices_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemples et Exercices
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#points-cles-a-retenir_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Points Clés à Retenir
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-2-resolution-des-equations-differentielles-ordinaires-edo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partie 2 : Résolution des Équations Différentielles Ordinaires (EDO)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Partie 2 : Résolution des Équations Différentielles Ordinaires (EDO)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methode-deuler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthode d&rsquo;Euler
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Méthode d’Euler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#derivation-a-partir-de-la-serie-de-taylor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dérivation à partir de la série de Taylor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-et-exemples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implémentation et Exemples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-3-methode-des-differences-finies-mdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partie 3 : Méthode des Différences Finies (MDF)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-4-regression-et-ajustement-de-courbes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partie 4 : Régression et Ajustement de Courbes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partie-5-exemples-dapplication-et-exercices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Partie 5 : Exemples d&rsquo;Application et Exercices
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="chapitre-4-introduction-a-lanalyse-numerique">Chapitre 4 : Introduction à l&rsquo;analyse numérique</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Les méthodes numériques jouent un rôle crucial dans divers domaines de la science, de l&rsquo;ingénierie et de l&rsquo;analyse de données. Elles permettent de résoudre des problèmes complexes qui sont souvent difficiles, voire impossibles, à résoudre analytiquement. Ces méthodes sont particulièrement utiles dans des domaines tels que la physique, la chimie, l&rsquo;ingénierie mécanique et aéronautique, l&rsquo;analyse financière et bien d&rsquo;autres. L&rsquo;objectif de ce cours est de fournir une compréhension solide des principes fondamentaux des méthodes numériques et de montrer comment elles peuvent être appliquées pour résoudre des problèmes réels.</p>
+<p>Dans le monde réel, de nombreux systèmes ne peuvent pas être décrits par des formules simples ou des équations linéaires. Au lieu de cela, nous sommes souvent confrontés à des équations différentielles, des problèmes non linéaires, ou des systèmes dynamiques complexes qui nécessitent une approche plus sophistiquée pour leur analyse. Les méthodes numériques offrent un cadre pour approcher ces problèmes en les divisant en calculs plus simples, réalisables avec des ordinateurs.</p>
+<p>Bien que les concepts de base des méthodes numériques puissent être compris et appliqués à la main pour des problèmes simples, l&rsquo;usage d&rsquo;outils informatiques est essentiel pour traiter des problèmes plus complexes. Des logiciels comme MATLAB, R, Python (avec des bibliothèques comme NumPy et SciPy), et même des langages plus bas niveau comme C++ ou Fortran, sont couramment utilisés dans ce domaine. Chaque outil et langage a ses propres avantages, et le choix dépend souvent du problème spécifique à résoudre, de la précision requise, et de la familiarité de l&rsquo;utilisateur avec l&rsquo;outil.</p>
+<p>Dans ce chapitre nous aborderons les différentes méthodes numériques en commençant par l&rsquo;intégration et la différenciation numérique, la résolution d&rsquo;équations différentielles ordinaires, la méthode des différences finies, et enfin, la régression et l&rsquo;ajustement de courbes. Chaque section comprendra des explications théoriques, des exemples pratiques, et des exercices pour renforcer la compréhension.</p>
+<h2 id="integration-et-differenciation-numerique">Intégration et Différenciation Numérique</h2>
+<h3 id="bases-de-lintegration-numerique">Bases de l&rsquo;Intégration Numérique</h3>
+<p>L&rsquo;intégration numérique est une partie fondamentale des méthodes numériques. Elle est utilisée pour estimer la valeur des intégrales, en particulier lorsque la solution analytique est difficile ou impossible à obtenir. Cette section explore les techniques de base de l&rsquo;intégration numérique.</p>
+<h4 id="concept-des-sommes-de-riemann">Concept des Sommes de Riemann</h4>
+<p>La somme de Riemann est le point de départ pour comprendre l&rsquo;intégration numérique. Elle est utilisée pour approximer l&rsquo;intégrale d&rsquo;une fonction sur un intervalle en divisant l&rsquo;intervalle en petits segments.</p>
+<ul>
+<li><strong>Définition</strong> : Pour une fonction <span class="arithmatex">\( f(x) \)</span> continue sur l&rsquo;intervalle <span class="arithmatex">\([a, b]\)</span>, la somme de Riemann est donnée par :</li>
+</ul>
+<div class="arithmatex">\[ S = \sum_{i=1}^{n} f(x_i^*) \cdot \Delta x \]</div>
+<p>où <span class="arithmatex">\( \Delta x = \frac{b - a}{n} \)</span> et <span class="arithmatex">\( x_i^* \)</span> est un point dans le i-ème sous-intervalle <span class="arithmatex">\([x_{i-1}, x_i]\)</span>.</p>
+<p>Il s&rsquo;agit d&rsquo;une approximation géométrique de l&rsquo;intégrale de <span class="arithmatex">\(f\)</span> par la méthode des rectangles.</p>
+<p>Notons que lorsque <span class="arithmatex">\(n \rightarrow + \infty \)</span>, c&rsquo;est à dire lorsque le nombre d&rsquo;interval est grand, on a : </p>
+<div class="arithmatex">\[ \lim\limits_{n \rightarrow \infty} \frac{b - a}{n} \sum_{k=1}^{n} f(a + k \frac{b - a}{n}) = \int_{a}^{b} f(x) \,dx \]</div>
+<p><img alt="" class="img-small" src="images/riemann.bot.png" />
+<img alt="" class="img-small" src="images/riemann.up.png" /></p>
+<h4 id="regle-du-trapeze">Règle du Trapèze</h4>
+<p>La règle du trapèze est une méthode simple mais plus précise que la somme de Riemann pour calculer l&rsquo;intégrale d&rsquo;une fonction.</p>
+<ul>
+<li><strong>Formule</strong> : L&rsquo;intégrale de <span class="arithmatex">\( f(x) \)</span> sur <span class="arithmatex">\([a, b]\)</span> est approximée par :</li>
+</ul>
+<div class="arithmatex">\[ \int_{a}^{b} f(x) \, dx \approx \frac{\Delta x}{2} [f(a) + 2f(x_1) + 2f(x_2) + \ldots + 2f(x_{n-1}) + f(b)] \]</div>
+<p><img alt="" class="img-medium" src="images/trapeze.png" /></p>
+<h4 id="regle-de-simpson">Règle de Simpson</h4>
+<p>La règle de Simpson est une technique encore plus précise qui utilise des paraboles pour approcher l&rsquo;intégrale.</p>
+<ul>
+<li><strong>Formule</strong> : Pour <span class="arithmatex">\( n \)</span> pair, l&rsquo;intégrale de <span class="arithmatex">\( f(x) \)</span> sur <span class="arithmatex">\([a, b]\)</span> est approximée par :</li>
+</ul>
+<div class="arithmatex">\[ \int_{a}^{b} f(x) \, dx \approx \frac{\Delta x}{3} [f(a) + 4f(x_1) + 2f(x_2) + 4f(x_3) + \ldots + 4f(x_{n-1}) + f(b)] \]</div>
+<h4 id="exemples-et-exercices">Exemples et Exercices</h4>
+<ol>
+<li><strong>Calcul de l&rsquo;aire sous une courbe</strong> :
+- Utiliser la règle du trapèze pour estimer l&rsquo;aire sous la courbe de <span class="arithmatex">\( f(x) = x^2 \)</span> entre 0 et 1.</li>
+</ol>
+<ul>
+<li>Comparer maintenant avec la solution analytique</li>
+</ul>
+<ol start="2">
+<li><strong>Application de la règle de Simpson</strong> :
+   - Estimer l&rsquo;intégrale de la fonction <span class="arithmatex">\( \sin(x) \)</span> sur l&rsquo;intervalle <span class="arithmatex">\([0, \pi]\)</span> en utilisant la règle de Simpson.</li>
+</ol>
+<p>Ces méthodes offrent des degrés de précision différents et sont choisies en fonction des exigences de précision et de la complexité de la fonction à intégrer. La règle du trapèze est simple et efficace pour des fonctions relativement lisses, tandis que la règle de Simpson est plus appropriée pour des fonctions avec des variations plus importantes sur l&rsquo;intervalle d&rsquo;intégration.</p>
+<h4 id="points-cles-a-retenir">Points Clés à Retenir</h4>
+<ul>
+<li>La précision de ces méthodes dépend du nombre de sous-intervalles <span class="arithmatex">\( n \)</span>)(ou du pas de discrétisation <span class="arithmatex">\( \Delta x \)</span>). Plus le nombre de sous-intervalles est élevé, plus l&rsquo;approximation est précise.</li>
+<li>Cependant, une augmentation du nombre de sous-intervalles entraîne également une augmentation du temps de calcul. Il est donc crucial de trouver un équilibre entre précision et efficacité computationnelle.</li>
+<li>Ces méthodes sont fondamentales en analyse numérique et trouvent des applications dans de nombreux domaines, allant de la physique et de l&rsquo;ingénierie à l&rsquo;économie et aux sciences biologiques.</li>
+</ul>
+<hr />
+<h3 id="differenciation-numerique">Différenciation Numérique</h3>
+<p>La différentiation numérique est une technique utilisée pour approximer la dérivée d&rsquo;une fonction à partir de valeurs discrètes. Cette méthode est particulièrement utile lorsque la dérivée exacte est difficile à calculer ou lorsque nous n&rsquo;avons que des données expérimentales. </p>
+<p>Les méthodes des différences finies sont des formules utilisées pour estimer la dérivée d&rsquo;une fonction en utilisant les valeurs de la fonction en des points spécifiques.</p>
+<p>Pour rappel : la définition de la dérivée d&rsquo;une fonction peut être données comme cela : </p>
+<div class="arithmatex">\[f'(x) = \lim\limits_{h \rightarrow 0} \frac{f(x + h) - f(x - h)}{2h} \]</div>
+<h4 id="difference-avancee-forward-difference">Différence Avancée (Forward Difference)</h4>
+<div class="arithmatex">\[ f'(x) \approx \frac{f(x + h) - f(x)}{h} \]</div>
+<p>Où <span class="arithmatex">\( h \)</span> est un petit pas. Cette formule donne une approximation de la dérivée en utilisant le point actuel et le point suivant.</p>
+<h4 id="difference-retardee-backward-difference">Différence Retardée (Backward Difference)</h4>
+<div class="arithmatex">\[ f'(x) \approx \frac{f(x) - f(x - h)}{h} \]</div>
+<p>Cette formule utilise le point actuel et le point précédent pour estimer la dérivée.</p>
+<h4 id="difference-centree-central-difference">Différence Centrée (Central Difference)</h4>
+<div class="arithmatex">\[ f'(x) \approx \frac{f(x + h) - f(x - h)}{2h} \]</div>
+<p>Cette méthode, qui utilise le point avant et le point après, offre généralement une meilleure approximation que les différences avancées ou retardées. Elle neccessite néamoins d&rsquo;avoir les points d&rsquo;avant et d&rsquo;après pour le calcul ce qui peut être difficile lors de la première itération d&rsquo;un solveur ou aux abords des frontières.</p>
+<h4 id="analyse-des-erreurs">Analyse des Erreurs</h4>
+<p>L&rsquo;erreur dans la différentiation numérique dépend de la taille du pas <span class="arithmatex">\( h \)</span> et de la nature de la fonction. En général, des valeurs plus petites de <span class="arithmatex">\( h \)</span> conduisent à de meilleures approximations, mais peuvent augmenter l&rsquo;erreur d&rsquo;arrondi due aux limitations de précision des calculs informatiques.</p>
+<h4 id="exemples-et-exercices_1">Exemples et Exercices</h4>
+<ol>
+<li>
+<p><strong>Estimation de la Dérivée</strong> :
+Calculer numériquement la dérivée de <span class="arithmatex">\( f(x) = x^2 \)</span> en <span class="arithmatex">\( x = 2 \)</span> en utilisant les trois méthodes de différences et comparer les résultats avec la dérivée analytique.</p>
+</li>
+<li>
+<p><strong>Application en Physique</strong> :
+Utiliser la différentiation numérique pour estimer la vitesse et l&rsquo;accélération à différents instants à partir de données expérimentales de position en fonction du temps.</p>
+</li>
+</ol>
+<h4 id="points-cles-a-retenir_1">Points Clés à Retenir</h4>
+<ul>
+<li>La différentiation numérique est un outil puissant, mais elle peut être sensible aux erreurs d&rsquo;arrondi, surtout pour des valeurs très petites de <span class="arithmatex">\( h \)</span>.</li>
+<li>Il est essentiel de trouver un équilibre entre la réduction de l&rsquo;erreur de troncature (en choisissant un <span class="arithmatex">\( h \)</span> petit) et la minimisation</li>
+</ul>
+<p>de l&rsquo;erreur d&rsquo;arrondi (en évitant un <span class="arithmatex">\( h \)</span> trop petit).
+- Dans la pratique, le choix de <span class="arithmatex">\( h \)</span> peut dépendre de la nature de la fonction à différencier et du contexte de l&rsquo;application.</p>
+<p>Ces techniques de différentiation numérique sont fondamentales dans de nombreux domaines de l&rsquo;ingénierie et de la science, en particulier lorsqu&rsquo;il s&rsquo;agit d&rsquo;analyser des données expérimentales ou de résoudre des équations qui ne peuvent pas être traitées analytiquement.</p>
+<p>Avec cette section, nous avons couvert les bases de l&rsquo;intégration et de la différentiation numérique, deux piliers fondamentaux des méthodes numériques. Dans la prochaine partie du cours, nous aborderons les méthodes pour résoudre les équations différentielles ordinaires, en commençant par la méthode d&rsquo;Euler, pour approcher les solutions d&rsquo;équations différentielles ordinaire.</p>
+<hr />
+<h2 id="partie-2-resolution-des-equations-differentielles-ordinaires-edo">Partie 2 : Résolution des Équations Différentielles Ordinaires (EDO)</h2>
+<h3 id="methode-deuler">Méthode d&rsquo;Euler</h3>
+<p>La méthode d&rsquo;Euler est une des techniques numériques les plus fondamentales pour résoudre des équations différentielles ordinaires (EDO). Elle permet d&rsquo;approximer la solution d&rsquo;une EDO avec une condition initiale donnée.</p>
+<h4 id="derivation-a-partir-de-la-serie-de-taylor">Dérivation à partir de la série de Taylor</h4>
+<p>L&rsquo;idée de base de la méthode d&rsquo;Euler découle de la série de Taylor. Pour une fonction <span class="arithmatex">\(y(t)\)</span> différentiable, la série de Taylor autour d&rsquo;un point <span class="arithmatex">\(t\)</span> est :</p>
+<div class="arithmatex">\[ y(t+h) = y(t) + h y'(t) + \frac{h^2}{2!} y''(t) + \cdots \]</div>
+<p>Pour une approximation de premier ordre, on ignore les termes d&rsquo;ordre supérieur à <span class="arithmatex">\(h\)</span> :</p>
+<div class="arithmatex">\[ y(t+h) \approx y(t) + h y'(t) \]</div>
+<p>Si <span class="arithmatex">\(y'(t) = f(t, y(t))\)</span>, une EDO, alors la méthode d&rsquo;Euler peut être écrite comme :</p>
+<div class="arithmatex">\[ y_{n+1} = y_n + h f(t_n, y_n) \]</div>
+<p>où <span class="arithmatex">\(h\)</span> est le pas de temps, <span class="arithmatex">\(y_{n+1}\)</span> est l&rsquo;approximation de <span class="arithmatex">\(y\)</span> au temps <span class="arithmatex">\(t_{n+1} = t_n + h\)</span>, et <span class="arithmatex">\(y_n\)</span> est la valeur connue de <span class="arithmatex">\(y\)</span> au temps <span class="arithmatex">\(t_n\)</span>.</p>
+<h3 id="implementation-et-exemples">Implémentation et Exemples</h3>
+<p><strong>Implémentation</strong> :
+Pour implémenter la méthode d&rsquo;Euler, on suit ces étapes :</p>
+<ol>
+<li>Choisir un pas de temps <span class="arithmatex">\(h\)</span> et un temps final <span class="arithmatex">\(t_{\text{fin}}\)</span> pour la simulation.</li>
+<li>Initialiser <span class="arithmatex">\(y_0\)</span> à la condition initiale donnée.</li>
+<li>Pour chaque pas de temps <span class="arithmatex">\(n\)</span>, calculer <span class="arithmatex">\(y_{n+1}\)</span> en utilisant la formule précédente jusqu&rsquo;à atteindre <span class="arithmatex">\(t_{\text{fin}}\)</span>.</li>
+</ol>
+<p><strong>Exemple</strong> :</p>
+<p>Considérons une balle en chute libre sous l&rsquo;effet de la gravité, mais contrairement à l&rsquo;exemple précédent, intégrons l&rsquo;effet des frottements de l&rsquo;air. Les frottements de l&rsquo;air sont souvent modélisés comme proportionnels à la vitesse de la balle, ce qui ajoute un terme de frottement à l&rsquo;équation différentielle.</p>
+<p>L&rsquo;équation du mouvement, en prenant en compte la gravité et les frottements de l&rsquo;air, peut être écrite comme :</p>
+<div class="arithmatex">\[ \frac{dv}{dt} = g - \alpha v \]</div>
+<p>où :</p>
+<ul>
+<li><span class="arithmatex">\(v(t)\)</span> est la vitesse de la balle,</li>
+<li><span class="arithmatex">\(g\)</span> est l&rsquo;accélération due à la gravité (<span class="arithmatex">\(9.81 \, m/s^2\)</span> sur Terre),</li>
+<li><span class="arithmatex">\(\alpha\)</span> est le coefficient de frottement de l&rsquo;air,</li>
+<li><span class="arithmatex">\(t\)</span> est le temps.</li>
+</ul>
+<p>Le terme <span class="arithmatex">\(\alpha v\)</span> modélise les frottements de l&rsquo;air, avec <span class="arithmatex">\(\alpha\)</span> représentant la force de frottement par unité de vitesse.</p>
+<p>Pour intégrer l&rsquo;équation différentielle qui décrit le mouvement d&rsquo;une balle en chute libre avec frottements en utilisant la méthode d&rsquo;Euler, nous suivons le schéma d&rsquo;intégration suivant :</p>
+<ol>
+<li>
+<p><strong>Initialisation</strong> : Définissez les conditions initiales du système : la position initiale <span class="arithmatex">\(x_0, y_0\)</span>, et la vitesse initiale <span class="arithmatex">\(v_{x0}, v_{y0}\)</span>. Choisissez également le pas de temps <span class="arithmatex">\(dt\)</span> pour l&rsquo;intégration.
+On notera le vector <span class="arithmatex">\(\vec{x} = (x_0, y_0)\)</span> et <span class="arithmatex">\( \vec{v} = (v_{y0}, v_{x0})\)</span></p>
+</li>
+<li>
+<p><strong>Calcul de la Force de Frottement</strong> : À chaque pas de temps, calculez la force de frottement agissant sur la balle. Si la force de frottement est proportionnelle à la vitesse, elle peut être exprimée comme <span class="arithmatex">\(F_{\text{frott}} = -\alpha v\)</span>, où <span class="arithmatex">\(\alpha\)</span> est le coefficient de frottement.</p>
+</li>
+<li>
+<p><strong>Mise à Jour de la Vitesse</strong> : Utilisez l&rsquo;équation différentielle pour calculer la vitesse de la balle au pas de temps suivant :</p>
+</li>
+</ol>
+<div class="arithmatex">\[ \vec{v_{n+1}} = \vec{v_n} + (\vec{g} - \alpha \vec{v_n}) \cdot dt \]</div>
+<p>Ici, <span class="arithmatex">\(g\)</span> est l&rsquo;accélération due à la gravité, et <span class="arithmatex">\(dt\)</span> est le pas de temps.</p>
+<ol start="4">
+<li><strong>Mise à Jour de la Position</strong> : Mettez à jour la position de la balle en utilisant la nouvelle vitesse :</li>
+</ol>
+<div class="arithmatex">\[ \vec{x_{n+1}} = \vec{x} +  \vec{v_n} \cdot dt \]</div>
+<ol start="5">
+<li><strong>Conditions aux Limites</strong> : Si la balle atteint un bord de la zone de simulation (par exemple, le sol), ajustez sa vitesse et sa position en fonction des conditions physiques (comme un rebond).</li>
+</ol>
+<p>Le schéma d&rsquo;intégration complet donne alors</p>
+<div class="arithmatex">\[\begin{cases}
+\vec{v_{n+1}} = \vec{v_n} + (\vec{g} - \alpha \vec{v_n}) \cdot dt\\
+\vec{x_{n+1}} = \vec{x} +  \vec{v_n} \cdot dt
+\end{cases}\]</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Ce schéma est dit explicite car il est possible de calculer toutes ses composantes en fonctions des données déjà connu. Cependantil n&rsquo;est pas très stable. Nous verons par la suite qu&rsquo;en utilisant le schéma suivant, dit symplétique on reduit grandement l&rsquo;erreur d&rsquo;approximation avec un minimum d&rsquo;effort.</p>
+<div class="arithmatex">\[\begin{cases}
+\vec{v_{n+1}} = \vec{v_n} + (\vec{g} - \alpha \vec{v_n}) \cdot dt\\
+\vec{x_{n+1}} = \vec{x} +  \vec{v_{n+1}} \cdot dt
+\end{cases}\]</div>
+</div>
+<p>Ce schéma d&rsquo;intégration simple permet d&rsquo;approcher la trajectoire et la vitesse de la balle au cours du temps dans un contexte où les forces de frottement sont non négligeables. Il illustre bien l&rsquo;utilisation de la méthode d&rsquo;Euler pour résoudre des équations différentielles ordinaires (EDO) issues de problèmes physiques réels, en tenant compte de l&rsquo;influence significative des frottements sur le mouvement.</p>
+<div id="sketch-holder">
+    <button class="md-button" onclick="startpause()">Start simulation</button>
+    <button class="md-button" onclick="resetSim()">Reset simulation</button>
+
+    <script>
+    var run = false;
+    function startpause(){
+    run = !run;
+    }
+
+
+    var x;
+    var y;
+    var vx;
+    var vy;
+    var visco;
+    var radius;
+    var dt;
+
+    function setup() {
+        const canvas = createCanvas(400, 400)
+        canvas.parent('sketch-holder')
+        resetSim();
+    }
+
+    function resetSim(){
+        x = 50;
+        y = 50;
+        vx = 50;
+        vy = 0;
+        dt = 0.1;
+        radius = 10;
+        visco = 0.005;
+    }
+
+    function draw() {
+        if(run){
+            background(255);
+            vy += 98.1*dt;
+            vx-=vx*visco;
+            vy-=vy*visco;
+
+            x += vx*dt;
+            y += vy*dt;
+
+            if(x < radius || x > 400-radius){
+                vx = -vx;
+                x = min(max(x,radius),400-radius);
+            }
+            if(y < radius || y > 400-radius){
+                vy = -vy;
+                y = min(max(y,radius),400-radius);
+            }
+            fill(50)
+            ellipse(x, y, 2*radius, 2*radius);
+        }
+    }
+    </script>
+
+</div>
+
+<!-- 
+#### Analyse des Erreurs et Stabilité
+
+L'erreur dans cette simulation dépendra de la taille du pas de temps `dt` et du coefficient de frottement `alpha`. Un `dt` plus petit offre une meilleure précision mais nécessite plus d'itérations pour simuler la même durée en temps réel. La stabilité de la simulation est également influencée par la valeur de `alpha` : des valeurs très élevées peuvent nécessiter un ajustement de `dt` pour maintenir la précision et la stabilité de la simulation. 
+
+
+#### Analyse des Erreurs et Stabilité
+
+**Erreur** :
+L'erreur dans la méthode d'Euler provient de l'ignorance des termes d'ordre supérieur dans la série de Taylor. L'erreur à chaque pas est proportionnelle à \(h^2\), mais l'erreur totale accumulée peut être proportionnelle à \(h\), rendant la méthode d'Euler de premier ordre.
+
+**Stabilité** :
+La stabilité de la méthode d'Euler dépend de la fonction \(f(t, y)\) et du choix de \(h\). Pour certaines EDO, un \(h\) trop grand peut rendre la solution numérique instable, particulièrement pour les EDO raides.
+
+-->
+
+<hr />
+<ul>
+<li><strong>Section 4 : Méthodes d&rsquo;Ordre Supérieur</strong></li>
+<li>Méthodes de Runge-Kutta.</li>
+<li>Intégration de Verlet et Velocity Verlet.</li>
+<li>Applications en physique et ingénierie.</li>
+</ul>
+<p><img alt="" class="img-tiny" src="https://media.licdn.com/dms/image/C5612AQFO4X-MGIP-yg/article-cover_image-shrink_600_2000/0/1520085384509?e=2147483647&amp;v=beta&amp;t=-n0K0mGssC9iDxO47HbGrq7kR3cD4wkeiE7y2l7uWK8" /></p>
+<h2 id="partie-3-methode-des-differences-finies-mdf">Partie 3 : Méthode des Différences Finies (MDF)</h2>
+<ul>
+<li><strong>Section 5 : Introduction à la MDF</strong></li>
+<li>Discrétisation du domaine.</li>
+<li>Application aux EDP : équation de la chaleur et équation des ondes.</li>
+<li>Stabilité et convergence.</li>
+</ul>
+<p><img alt="" class="img-tiny" src="https://media.licdn.com/dms/image/C5612AQFO4X-MGIP-yg/article-cover_image-shrink_600_2000/0/1520085384509?e=2147483647&amp;v=beta&amp;t=-n0K0mGssC9iDxO47HbGrq7kR3cD4wkeiE7y2l7uWK8" /></p>
+<h2 id="partie-4-regression-et-ajustement-de-courbes">Partie 4 : Régression et Ajustement de Courbes</h2>
+<ul>
+<li><strong>Section 6 : Régression des Moindres Carrés</strong></li>
+<li>Théorie et dérivation.</li>
+<li>Exemple de régression linéaire.</li>
+<li>Applications et limitations.</li>
+</ul>
+<p><img alt="" class="img-tiny" src="https://media.licdn.com/dms/image/C5612AQFO4X-MGIP-yg/article-cover_image-shrink_600_2000/0/1520085384509?e=2147483647&amp;v=beta&amp;t=-n0K0mGssC9iDxO47HbGrq7kR3cD4wkeiE7y2l7uWK8" /></p>
+<h2 id="partie-5-exemples-dapplication-et-exercices">Partie 5 : Exemples d&rsquo;Application et Exercices</h2>
+<ul>
+<li><strong>Section 7 : Applications Pratiques</strong></li>
+<li>Exemples et exercices pour chaque méthode.</li>
+<li>Scénarios réels et analyse de données.</li>
+<li>Discussion sur le choix de la méthode appropriée.</li>
+</ul>
+<p><img alt="" class="img-tiny" src="https://media.licdn.com/dms/image/C5612AQFO4X-MGIP-yg/article-cover_image-shrink_600_2000/0/1520085384509?e=2147483647&amp;v=beta&amp;t=-n0K0mGssC9iDxO47HbGrq7kR3cD4wkeiE7y2l7uWK8" /></p>
+<h2 id="conclusion">Conclusion</h2>
+<ul>
+<li>Résumé des concepts clés.</li>
+<li>Lectures complémentaires et sujets avancés.</li>
+<li>Remarques de clôture.</li>
+</ul>
+
+
+<!-- Last updated date -->
+
+<hr />
+<div class="md-source-date">
+  <small>
+    
+      Auteur :  Sebastian Gomez, Thomas Fiolet, Jules Topart - 
+    
+    <!-- mkdocs-git-revision-date-localized-plugin -->
+    
+      Dernière mise à jour: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">24 octobre 2024</span>
+
+      
+
+    <!-- mkdocs-git-revision-date-plugin -->
+    
+  </small>
+</div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../chap3/projet/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Ingénieurie collaborative">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Ingénieurie collaborative
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../sos/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Résumé de cours">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Résumé de cours
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2021 - Unilasalle Amiens - Creative Commons Attribution Non Commercial
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "search.suggest", "navigation.footer", "navigation.top", "toc.follow"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../../../js/mkdocs-charts-plugin.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+      
+        <script src="../../../theme/p5.min.js"></script>
+      
+        <script src="../../../theme/p5.fillGradient.js"></script>
+      
+        <script src="../../../theme/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/1.5.2/math.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
+      
+    
+  </body>
+</html>

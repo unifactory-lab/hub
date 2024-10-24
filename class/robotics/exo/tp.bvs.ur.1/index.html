@@ -1,0 +1,2377 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Bienvenue sur le site officiel de l'Usine École d'UniLaSalle Amiens, plateforme dédiée aux nouvelles technologies lié à l'industrie du futur.">
+      
+      
+        <meta name="author" content="Sebastian Gomez, Thomas Fiolet, Jules Topart">
+      
+      
+        <link rel="canonical" href="https://unifactory-lab.github.io/hub/class/robotics/exo/tp.bvs.ur.1/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Robotique & Cobotique - Hub - Production Automatisée et Usine connectée</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=indivisa:300,300i,400,400i,700,700i%7CUbuntu+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"indivisa";--md-code-font:"Ubuntu Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/neoteroi-mkdocs.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/pseudo-code.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="unilasalle" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#robotique-cobotique" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+    <nav class="md-header__inner md-grid" aria-label="header.title">
+        <a href="../../../.." title="Hub - Production Automatisée et Usine connectée"
+            class="md-header__button md-logo" aria-label="Hub - Production Automatisée et Usine connectée" data-md-component="logo">
+            
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12Z"/></svg>
+
+        </a>
+        <label class="md-header__button md-icon" for="__drawer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+        </label>
+
+        <img class="unilogo" src="https://unifactory-lab.github.io/hub/images/logo-unilasalle-white.png">
+
+        <div class="md-header__title" data-md-component="header-title">
+            <div class="md-header__ellipsis">
+                <div class="md-header__topic">
+                    <span class="md-ellipsis">
+                        Hub - Production Automatisée et Usine connectée
+                    </span>
+                </div>
+                <div class="md-header__topic" data-md-component="header-topic">
+                    <span class="md-ellipsis">
+                        
+                        Robotique & Cobotique
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <form class="md-header__option" data-md-component="palette">
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="unilasalle"
+                data-md-color-primary="" data-md-color-accent="" 
+                aria-label="Switch to dark mode"  type="radio"
+                name="__palette" id="__palette_1">
+            
+            <label class="md-header__button md-icon" title="Switch to dark mode"
+                for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+            
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate"
+                data-md-color-primary="" data-md-color-accent="" 
+                aria-label="Switch to light mode"  type="radio"
+                name="__palette" id="__palette_2">
+            
+            <label class="md-header__button md-icon" title="Switch to light mode"
+                for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+            
+            
+        </form>
+        
+        
+        
+        
+        <div class="md-header__source">
+            <a href="https://github.com/unifactory-lab/hub" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hub
+  </div>
+</a>
+        </div>
+        
+    </nav>
+    
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+    
+  
+  Cours
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../projets/" class="md-tabs__link">
+          
+  
+    
+  
+  Projets
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../documentation.md" class="md-tabs__link">
+        
+  
+    
+  
+  Documentation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../ressources.md" class="md-tabs__link">
+        
+  
+    
+  
+  Ressources
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Hub - Production Automatisée et Usine connectée" class="md-nav__button md-logo" aria-label="Hub - Production Automatisée et Usine connectée" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12Z"/></svg>
+
+    </a>
+    Hub - Production Automatisée et Usine connectée
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/unifactory-lab/hub" title="Aller au dépôt" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Robotique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../meca/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Mécanique
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mécanique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meca/intro.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meca/intro.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../factory/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Usine numerique
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Usine numerique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 1 : Contexte et définition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../factory/chap2/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapitre 2 : L'ère numérique
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_4" id="__nav_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Chapitre 2 : L'ère numérique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap2/cao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maquette numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap2/digital-twin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jumeau numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap2/fab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fabrication numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap2/simulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Simulation physique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap2/robotics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Robotique et Cobotique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap2/ia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Algorithme
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap2/data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sciences des données
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap2/vr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Réalité augmentée
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../factory/chap3/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Chapitre 3 : Méthode d'implantation
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4_5" id="__nav_2_4_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Chapitre 3 : Méthode d'implantation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap3/intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L'usine numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap3/process/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Usine du futur - Approche processus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap3/innov/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Managment de l&rsquo;innovation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap3/projet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ingénieurie collaborative
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/chap4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapitre 4 : Introduction à l'analyse numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../factory/sos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Résumé de cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_8" id="__nav_2_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Exercices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_8_2" id="__nav_2_4_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Travaux dirirgée
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Travaux dirirgée
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/td1.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/td2.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/td3.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/td4.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4_8_3" id="__nav_2_4_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Travaux pratiques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_2_4_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Travaux pratiques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp1.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp2.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp3.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp4.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp5.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp6.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../exercices/tp7.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../projets/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Projets
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Projets
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../projets/actionneur_imp_3d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Actionneur imp3D
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../documentation.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ressources.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ressources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#decouverte-et-prise-en-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      Découverte et prise en main
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quest-ce-que-la-cobotique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Qu&rsquo;est-ce que la Cobotique ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universal-robots-ur10-e-series" class="md-nav__link">
+    <span class="md-ellipsis">
+      Universal Robots - UR10-e series
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectifs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materiel-et-logiciel-necessaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matériel et logiciel nécessaire
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#travaux-pratiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Travaux Pratiques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Travaux Pratiques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initialisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialisation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#programmer-le-robot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programmer le robot
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definir-un-outil" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définir un outil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-mouvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les mouvements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les mouvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mouvement-lineaire-movel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouvement Linéaire (MoveL)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mouvement Linéaire (MoveL)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caractéristiques :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-dutilisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple d&rsquo;utilisation :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mouvement-articulaire-movej" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouvement Articulaire (MoveJ)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mouvement Articulaire (MoveJ)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caractéristiques :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-dutilisation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple d&rsquo;utilisation :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mouvement-circulaire-movec" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouvement Circulaire (MoveC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mouvement Circulaire (MoveC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caractéristiques :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-dutilisation_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple d&rsquo;utilisation :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mouvement-planifie-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mouvement Planifié (Path)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mouvement Planifié (Path)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#caracteristiques_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Caractéristiques :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-dutilisation_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple d&rsquo;utilisation :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-des-types-de-mouvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration des Types de Mouvement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ii-exercice-pratique-suivi-de-ligne" class="md-nav__link">
+    <span class="md-ellipsis">
+      II - Exercice Pratique : Suivi de Ligne
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="II - Exercice Pratique : Suivi de Ligne">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#travail-a-realiser" class="md-nav__link">
+    <span class="md-ellipsis">
+      Travail à réaliser :
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liste-de-taches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liste de tâches :
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="robotique-cobotique"><strong>Robotique &amp; Cobotique</strong></h1>
+<h2 id="decouverte-et-prise-en-main">Découverte et prise en main</h2>
+<p><img alt="" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3dhb2diM2w4dmMyZ2w2dHAxeTdqamNlb3NjeThteXZtMnBkM2U0byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/A7VJgvti3G0IYIPyHQ/giphy.gif" /></p>
+<h2 id="quest-ce-que-la-cobotique">Qu&rsquo;est-ce que la Cobotique ?</h2>
+<p>La cobotique, ou robotique collaborative, fait référence à l&rsquo;utilisation de robots collaboratifs (cobots) qui travaillent en étroite collaboration avec les humains dans un environnement partagé. </p>
+<p>Contrairement aux robots industriels traditionnels, les cobots sont conçus pour être sûrs, flexibles et faciles à programmer, ce qui permet une intégration plus fluide dans les processus de production et autres applications. Leur capacité à interagir de manière sécurisée et productive avec les travailleurs humains en fait un atout précieux pour de nombreuses industries.</p>
+<p><img alt="" src="https://www.processalimentaire.com/var/site/storage/images/_aliases/reference/8/8/1/9/5669188-1-fre-FR/UniversalRobot-CobotUR20-All4Pack.jpg" /></p>
+<h2 id="universal-robots-ur10-e-series">Universal Robots - UR10-e series</h2>
+<p>Universal Robots est un leader mondial dans le domaine de la cobotique, offrant une gamme de robots collaboratifs faciles à déployer et à programmer. 
+Le modèle UR10-e est l&rsquo;un de leurs cobots les plus populaires, réputé pour sa polyvalence et sa capacité de charge utile élevée. Il est particulièrement apprécié pour les tâches qui nécessitent une portée plus longue et une précision accrue, telles que l&rsquo;assemblage, le pick-and-place, l&rsquo;emballage et la palettisation.</p>
+<p>Le UR10-e est équipé d&rsquo;une interface utilisateur intuitive et d&rsquo;outils logiciels avancés qui permettent même aux utilisateurs sans expérience préalable en robotique de créer des programmes de mouvement complexes. Sa conception ergonomique et ses fonctionnalités de sécurité intégrées assurent une interaction sûre avec les opérateurs humains, réduisant ainsi le risque d&rsquo;accidents et augmentant l&rsquo;efficacité globale.</p>
+<p>Le UR10e est un robot industriel à 6 axes capable de déplacer une charge utile allant jusqu&rsquo;à 10 kg. Ses vitesses de déplacement maximum sont relativement faibles, car il est conçu pour opérer sans protection intégrale, contrairement aux robots classiques.</p>
+<p><img alt="" class="img-medium" src="https://www.hmi-mbs.fr/wp-content/uploads/2021/04/robot-6-axes-articulations-universal-robots-hmi-mbs.jpg" /></p>
+<hr />
+<h2 id="objectifs">Objectifs</h2>
+<p>Le UR10e est un robot industriel à 6 axes capable de déplacer une charge utile allant jusqu&rsquo;à 10 kg. </p>
+<p>Ses vitesses de déplacement maximum sont relativement faibles, car il est conçu pour opérer sans protection intégrale, contrairement aux robots classiques.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Comprendre le fonctionnement d&rsquo;un robot</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Explorer les différents types de mouvement</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> Réaliser et tester des chemins programmés pour le robot</li>
+</ul>
+<h2 id="materiel-et-logiciel-necessaire">Matériel et logiciel nécessaire</h2>
+<ul>
+<li>Robot Universal robot UR10-e series</li>
+<li>Parcours d&rsquo;entrainement 1 <a href="../files/tp.bvs.ur/tp.ur.1.pdf">PDF</a></li>
+<li>Parcours d&rsquo;entrainement 2 <a href="../files/tp.bvs.ur/tp.ur.2.pdf">PDF</a></li>
+</ul>
+<hr />
+<h2 id="travaux-pratiques">Travaux Pratiques</h2>
+<p>Dans cette activité, vous allez découvrir les bases du fonctionnement d&rsquo;un cobot industriel. Vous allez apprendre à manipuler le robot et à comprendre ses composants principaux.</p>
+<hr />
+<p>Vous avez sûrement remarqué la petite tablette de contrôle devant vous, (aussi appelée le Pendant).</p>
+<p><img align="right" alt="" class="img-medium" src="https://m.shop.faure-technologies.com/data/medias/17117/style/mobile_prod_sheet/Universal_Robots_UR_control_panel.jpg" /></p>
+<p>C&rsquo;est depuis cette tablette que vous contrôlerez le robot. Elle permet de dialoguer avec ce dernier en créant des programmes et en définissant des points de passage.</p>
+<p>Si le robot est éteint, vous pouvez l&rsquo;allumer en appuyant sur le bouton <code>Power</code>.</p>
+<p><br>
+<br></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pendant l&rsquo;allumage, prenez un moment pour identifier les boutons d&rsquo;arrêt d&rsquo;urgence présents autour de vous. En cas de problème pendant le TP, vous êtes autorisé à faire usage de l&rsquo;un de ces boutons en cas de danger ou pour éviter d&rsquo;endommager le matériel. Sachez toutefois que, de par sa nature, le cobot détecte les collisions, et donc, il s&rsquo;arrêtera lors d&rsquo;une collision. Bien qu&rsquo;il ne puisse pas vous blesser gravement, il peut toutefois vous coincer ou vous heurter. Soyez donc prudent, cela reste une machine sans cervelle !</p>
+</div>
+<p>Une fois le robot allumé, vous remarquerez plusieurs onglets en haut de l&rsquo;interface. Vous pourrez y trouver les onglets suivants :</p>
+<p>Un fois le robot allumé vous remarquerai plusieurs onglet en haut de l&rsquo;interface. Vous pourrez y trouver les onglets suivants : </p>
+<ul>
+<li>Accueil</li>
+<li>Programmation</li>
+<li>Page de configuration (installation)</li>
+<li>Contrôle et déplacement</li>
+<li>Gestion des E/S (Entrées / Sorties)</li>
+<li>Journal</li>
+</ul>
+<h3 id="initialisation">Initialisation</h3>
+<p>Afin d&rsquo;initialiser le robot, vous devez alimenter ses moteurs et relâcher les freins. Pour cela, rendez-vous dans le menu d&rsquo;initialisation en cliquant sur le cercle rouge (parfois vert) situé en bas à gauche de l&rsquo;écran.</p>
+<p><img alt="" src="../images/tp.bvs.ur/init.jpg" /></p>
+<p>Appuyez maintenant sur le bouton <code>ON</code>, puis cliquez sur <code>Démarrer</code> pour relâcher les freins.
+Le robot est maintenant sous tension. </p>
+<div class="admonition failure">
+<p class="admonition-title">Problème</p>
+<p>Si le robot ne démarre pas, c&rsquo;est probablement dû à un arrêt d&rsquo;urgence externe. En effet, les cobots de l&rsquo;usine-école font partie d&rsquo;un ensemble cohérent et sont intégrés dans la chaîne de fabrication. Il arrive parfois qu&rsquo;un défaut apparaisse, le plus souvent à cause d&rsquo;un arrêt d&rsquo;urgence enfoncé quelque part. Vérifiez les arrêts d&rsquo;urgence et appelez le professeur pour débloquer la situation en toute sécurité.</p>
+</div>
+<p>Vous pouvez maintenant fermer la fenêtre d&rsquo;initialisation à l&rsquo;aide du bouton en bas à gauche de la fenêtre.</p>
+<h3 id="programmer-le-robot">Programmer le robot</h3>
+<p>Cliquez maintenant sur le bouton du milieu : <code>Programmer le robot</code>. Vous pouvez aussi accéder au programme en utilisant les onglets en haut de l&rsquo;écran.</p>
+<p><img alt="" src="../images/tp.bvs.ur/program.jpg" /></p>
+<p>Vous remarquerez que la page est divisée en trois parties. Sur la gauche, vous trouverez les &ldquo;boîtes à outils&rdquo; contenant les différentes instructions de programmation permettant de contrôler le robot.
+Au centre, votre programme, et sur la droite, la fenêtre de configuration des commandes.</p>
+<p>Les commandes sont exécutées de manière séquentielle, ce qui signifie qu&rsquo;elles s&rsquo;exécutent de haut en bas les unes après les autres.</p>
+<p>Commençons un nouveau programme. Dans le premier tiroir de la boîte à outils, sélectionnez le bloc <code>Move</code>. Ce premier bloc nous permettra, comme son nom l&rsquo;indique, de déplacer le robot.
+Vous remarquerez qu&rsquo;un bloc <code>Waypoint</code> a été ajouté automatiquement. Il s&rsquo;agit d&rsquo;un point de passage. Vous pouvez en ajouter plusieurs dans chaque commande de déplacement afin de créer des trajectoires complexes que le robot pourra suivre.</p>
+<p><img align="right" alt="" src="../images/tp.bvs.ur/move.arrows.jpg" /></p>
+<p>Cliquez sur le <code>Waypoint</code> puis cliquez ensuite sur <code>Définir le point de passage</code>.</p>
+<p>Maintenant, vous pouvez utiliser les flèches de droite et gauche pour déplacer le robot. Ce menu est assez intuitif car il permet de déplacer le robot dans le même sens que vous le voyez sur l&rsquo;écran du Teach pendant. Pour être sûr que le robot se déplace bien dans la bonne direction, alignez la vue 3D du robot pour la faire correspondre avec le robot tel que vous le voyez.</p>
+<p>Cliquez ensuite sur <code>OK</code> pour valider le point de passage.</p>
+<p>Bravo ! Vous avez créé votre premier point de passage.</p>
+<hr />
+<p>Le robot UR étant un cobot, vous vous demandez sûrement pourquoi nous ne pourrions pas le déplacer manuellement.
+Et bien, vous pouvez ! Pour cela, appuyez sur le bouton au-dessus du Teach pendant. Pour un confort optimal, vous pouvez passer votre main dans la sangle située à l&rsquo;arrière du pendant.</p>
+<p><img alt="" src="../images/tp.bvs.ur/teach.jpg" /></p>
+<p>Ainsi, vous pouvez utiliser votre avant-bras comme support de la tablette et accéder facilement au bouton <code>Teach</code>.
+Essayez de déplacer le robot après avoir pressé le bouton.</p>
+<p>Essayez de créer quelques déplacements et cliquez ensuite sur le bouton Play en bas de l&rsquo;interface pour exécuter le programme. Attention aux collisions !</p>
+<h3 id="definir-un-outil">Définir un outil</h3>
+<p>Lors de l&rsquo;utilisation du cobot, il est souvent nécessaire de configurer un outil. Pour cela, vous devez fournir au robot les informations géométriques de l&rsquo;outil qu&rsquo;il utilise afin de lui permettre d&rsquo;attraper des objets plus facilement.</p>
+<p>On définit généralement un outil en créant un point central d&rsquo;outil (PCO) (ou TCP en anglais).</p>
+<p><img alt="" src="../images/tp.bvs.ur/tcp.jpg" /></p>
+<p>Il s&rsquo;agit du point médian des points de contact de l&rsquo;outil. Si l&rsquo;outil est un crayon, le PCO est situé à son extrémité.
+Pour une pince, le TCP est situé entre les deux mors.</p>
+<p><img alt="" src="https://lh6.googleusercontent.com/lDTbn3PMC4Ceu0pEIuu0AbcmpJGgQqy74vwp7CbK-1QyrmJpLoNKMkXtYCgc3B-1AfZmUjwmc9N8x4oxrMBL6fL93OtdPi0zG9ut3YAPep_N4KBWUv2UW33EGmEQBtEZKgJmiLUQ" /></p>
+<p>Lors de la création d&rsquo;un PCO, nous créons en fait un repère. C&rsquo;est le repère de l&rsquo;outil. Ce repère est défini par trois axes X, Y et Z.</p>
+<p>Par défaut, le repère outil est situé à l&rsquo;extrémité du robot.</p>
+<p><img alt="" src="https://prod.cloudfront.making.unsw.edu.au/images/Robots-08_PVtmnQM.original.png" /></p>
+<p>Rendez-vous dans l&rsquo;onglet <code>Installation</code> pour créer un nouvel outil. Cliquez ensuite sur TCP.</p>
+<p>Mesurez ensuite votre outil à l&rsquo;aide d&rsquo;une règle ou d&rsquo;un pied à coulisse puis reportez les dimensions dans le menu de configuration sur le pendant. (Attention aux unités !)</p>
+<p>Il est possible de mesurer automatiquement les dimensions de l&rsquo;outil. Pour cela, vous pouvez utiliser l&rsquo;utilitaire de TCP en cliquant sur le bouton avec la baguette magique.</p>
+<p><img alt="" src="../images/tp.bvs.ur/magic.tcp.jpg" /></p>
+<p>Il vous faudra alors déplacer le robot à trois positions différentes de façon à ce que le TCP de l&rsquo;outil arrive toujours au même endroit. Il est utile de définir un repère visuel statique pour maximiser la précision des mesures. Essayez de choisir un coin ou un repère clair comme référence pour positionner votre robot.</p>
+<p><img alt="" src="../images/tp.bvs.ur/tcp.auto.jpg" /></p>
+<p>Il est possible de répéter une procédure similaire afin de calculer l&rsquo;orientation de l&rsquo;outil en alignant l&rsquo;axe Z du TCP avec la verticale.</p>
+<p>Ensuite, vous pouvez définir la masse de l&rsquo;outil. Bien que cette masse ne soit pas vraiment nécessaire pour les déplacements du robot, il est important de comprendre pourquoi la masse de l&rsquo;outil a une grande importance pour un cobot.</p>
+<p>Afin de détecter les collisions et de permettre à l&rsquo;utilisateur de le déplacer manuellement, les cobots intègrent des capteurs de force. Ces capteurs permettent de mesurer les forces appliquées sur le robot afin de décider dans quelles directions sedéplacer pendant le contrôle manuel. Le problème c&rsquo;est que la gravité est toujours présente et elle doit donc être prise en compte lors du calcul. Ainsi le robot compense continuellement la force de gravité pour se déplacer uniquement dans la direction souhaité par l&rsquo;utilisateur. Sans connaitre la masse de son effecteurs, le robot ne peut pas compenser efficacement la gravité et risque de tomber ou de monter indéfiniment.</p>
+<p>Pour calibrer la masse de l&rsquo;outil rendez-vous dans l&rsquo;onglet <code>PayLoad</code>
+Cliquez sur mesurer puis suivez la procédure.</p>
+<p>Bravo ! Vous avez paramétré un outil !</p>
+<p>Maintenant vous êtes en mesure de préciser au robot dans quel repère vous souhaitait travaillé. Si vous appliquez le TCP défini précédemment, le robot l&rsquo;utilisera comme référence pour ses mouvements, vous permettant de le programmer précisément.</p>
+<h3 id="les-mouvements">Les mouvements</h3>
+<p>Le robot UR10-e de Universal Robots permet de programmer différents types de mouvements pour accomplir une variété de tâches. Voici une explication des principaux types de mouvement que vous pouvez utiliser :</p>
+<p><img alt="" src="https://arxiv.org/html/2404.06687v1/extracted/5527281/images/primitives_sketches.png" /></p>
+<h4 id="mouvement-lineaire-movel">Mouvement Linéaire (MoveL)</h4>
+<p>Le mouvement linéaire (MoveL) permet de déplacer l&rsquo;outil du robot d&rsquo;un point A à un point B en suivant une ligne droite. Ce type de mouvement est idéal pour les tâches qui nécessitent une trajectoire précise et directe.</p>
+<h5 id="caracteristiques">Caractéristiques :</h5>
+<ul>
+<li>Trajectoire droite entre deux points</li>
+<li>Utilisé pour les opérations de pick-and-place</li>
+<li>Maintient l&rsquo;orientation de l&rsquo;outil constante tout au long du mouvement</li>
+</ul>
+<h5 id="exemple-dutilisation">Exemple d&rsquo;utilisation :</h5>
+<p>Pour déplacer un objet d&rsquo;une table à une autre en ligne droite.</p>
+<p><img alt="" src="./images/tp_robotique/movement_linear.png" /></p>
+<h4 id="mouvement-articulaire-movej">Mouvement Articulaire (MoveJ)</h4>
+<p>Le mouvement articulé (MoveJ) permet de déplacer l&rsquo;outil du robot d&rsquo;un point A à un point B en utilisant les articulations du robot. Ce type de mouvement est souvent plus rapide que le mouvement linéaire, mais la trajectoire peut être courbée.</p>
+<h5 id="caracteristiques_1">Caractéristiques :</h5>
+<ul>
+<li>Utilise les axes de rotation du robot</li>
+<li>Souvent plus rapide que le mouvement linéaire</li>
+<li>La trajectoire n&rsquo;est pas nécessairement une ligne droite</li>
+</ul>
+<h5 id="exemple-dutilisation_1">Exemple d&rsquo;utilisation :</h5>
+<p>Pour repositionner rapidement l&rsquo;outil du robot d&rsquo;une position de repos à une position de travail.</p>
+<p><img alt="" src="./images/tp_robotique/movement_articulated.png" /></p>
+<h4 id="mouvement-circulaire-movec">Mouvement Circulaire (MoveC)</h4>
+<p>Le mouvement circulaire (MoveC) permet de déplacer l&rsquo;outil du robot le long d&rsquo;un arc de cercle défini par trois points : le point de départ, un point intermédiaire et le point d&rsquo;arrivée. Ce type de mouvement est utile pour les opérations qui nécessitent une trajectoire courbée.</p>
+<h5 id="caracteristiques_2">Caractéristiques :</h5>
+<ul>
+<li>Trajectoire en arc de cercle</li>
+<li>Nécessite la définition d&rsquo;un point intermédiaire</li>
+<li>Utile pour les opérations de soudage ou de peinture</li>
+</ul>
+<h5 id="exemple-dutilisation_2">Exemple d&rsquo;utilisation :</h5>
+<p>Pour tracer un arc ou un cercle sur une surface.</p>
+<p><img alt="" src="./images/tp_robotique/movement_circular.png" /></p>
+<h4 id="mouvement-planifie-path">Mouvement Planifié (Path)</h4>
+<p>Le mouvement planifié permet de définir une trajectoire complexe en combinant plusieurs points de passage. Ce type de mouvement est utilisé pour les tâches nécessitant une grande précision et une trajectoire spécifique.</p>
+<h5 id="caracteristiques_3">Caractéristiques :</h5>
+<ul>
+<li>Combinaison de plusieurs points de passage (waypoints)</li>
+<li>Permet de créer des trajectoires complexes</li>
+<li>Utilisé pour les opérations de précision telles que l&rsquo;assemblage ou la soudure</li>
+</ul>
+<h5 id="exemple-dutilisation_3">Exemple d&rsquo;utilisation :</h5>
+<p>Pour suivre une trajectoire complexe lors de l&rsquo;assemblage d&rsquo;un produit.</p>
+<p><img alt="" src="./images/tp_robotique/movement_path.png" /></p>
+<hr />
+<h3 id="configuration-des-types-de-mouvement">Configuration des Types de Mouvement</h3>
+<p>Pour configurer ces types de mouvement dans le logiciel de programmation du robot UR10-e, vous devez sélectionner le type de mouvement approprié dans la boîte à outils et définir les points de passage nécessaires.</p>
+<ol>
+<li>
+<p><strong>Sélection du Type de Mouvement :</strong>
+   - Ouvrez la boîte à outils dans le logiciel de programmation.
+   - Sélectionnez le type de mouvement souhaité (MoveL, MoveJ, MoveC, ou Path).</p>
+</li>
+<li>
+<p><strong>Définition des Points de Passage :</strong>
+   - Cliquez sur le type de mouvement sélectionné pour l&rsquo;ajouter à votre programme.
+   - Définissez les points de passage en utilisant les commandes disponibles.
+   - Validez chaque point de passage pour construire votre trajectoire.</p>
+</li>
+<li>
+<p><strong>Exécution du Programme :</strong>
+   - Une fois les points de passage définis, sauvegardez et exécutez le programme.
+   - Observez le mouvement du robot et ajustez les paramètres si nécessaire pour optimiser la trajectoire.</p>
+</li>
+</ol>
+<h3 id="ii-exercice-pratique-suivi-de-ligne">II - Exercice Pratique : Suivi de Ligne</h3>
+<p>Dans le cadre de cet exercice, vous allez démontrer votre maîtrise des déplacements du robot en créant un programme de suivi de ligne. Vous devez utiliser les connaissances acquises précédemment pour définir un point central d&rsquo;outil (PCO ou TCP) et programmer le robot pour qu&rsquo;il suive une ligne de manière précise.</p>
+<p>Deux feuilles de parcours avec des niveaux de difficulté différents vous sont fournies. Vous devez programmer le suivi des lignes de la manière la plus propre possible, puis appeler le professeur pour validation.</p>
+<h4 id="travail-a-realiser">Travail à réaliser :</h4>
+<ol>
+<li>
+<p><strong>Créer un nouveau programme :</strong>
+   - Ouvrez le logiciel de programmation du robot.
+   - Créez un nouveau projet en sélectionnant l&rsquo;option appropriée dans le menu.</p>
+</li>
+<li>
+<p><strong>Définir un Point Central d&rsquo;Outil (PCO/TCP) :</strong>
+   - Rendez-vous dans l&rsquo;onglet <code>Installation</code> et sélectionnez <code>TCP</code>.
+   - Mesurez votre outil à l&rsquo;aide d&rsquo;une règle ou d&rsquo;un pied à coulisse.
+   - Reportez les dimensions de l&rsquo;outil dans le menu de configuration.
+   - Utilisez l&rsquo;utilitaire de TCP si nécessaire pour mesurer automatiquement les dimensions.</p>
+</li>
+<li>
+<p><strong>Configurer le programme de suivi de ligne :</strong>
+   - Sélectionnez le type de mouvement <code>MoveL</code> pour garantir un déplacement linéaire.
+   - Utilisez la boîte à outils pour ajouter des points de passage (<code>Waypoints</code>) le long de la ligne à suivre.
+   - Définissez chaque point de passage en utilisant les flèches pour déplacer le robot avec précision.
+   - Assurez-vous que le robot suit la ligne de manière fluide et sans déviations.</p>
+</li>
+<li>
+<p><strong>Tester et ajuster le programme :</strong>
+   - Exécutez le programme en mode simulation pour vérifier la trajectoire.
+   - Ajustez les points de passage si nécessaire pour améliorer la précision du suivi de ligne.</p>
+</li>
+<li>
+<p><strong>Validation :</strong>
+   - Une fois le programme finalisé et testé, appelez le professeur pour valider votre travail.
+   - Le professeur vérifiera la précision et la fluidité du suivi de ligne.</p>
+</li>
+</ol>
+<h4 id="liste-de-taches">Liste de tâches :</h4>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Ouvrir le logiciel de programmation et créer un nouveau projet</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Définir le TCP de l&rsquo;outil utilisé</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Configurer le type de mouvement <code>MoveL</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Ajouter et définir les points de passage le long de la ligne</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Exécuter le programme en mode simulation</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Ajuster les points de passage pour un suivi précis</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Tester le programme sur le robot</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> Appeler le professeur pour validation</li>
+</ul>
+<p>En suivant ces étapes, vous serez en mesure de démontrer votre maîtrise des déplacements du robot et de la programmation des mouvements. Bonne chance !</p>
+<hr />
+<!-- 
+Nous avions 4 chemins à réaliser :
+
+- Un premier chemin, ici en bleu
+- Un deuxième chemin, ici en violet
+- Un troisième chemin, ici en jaune
+- Un quatrième chemin, ici en rose
+
+![](./images/tp_robotique/chemins.png)
+
+### Chemin Bleu
+Le chemin bleu fait le tour du plan en utilisant des mouvements linéaires pour les droites et des mouvements circulaires pour les courbes.
+
+![](./images/tp_robotique/chemin_bleu.png)
+
+### Chemin Violet
+Le chemin violet utilise des arrondis avec 3 mouvements linéaires et 3 mouvements circulaires.
+
+![](./images/tp_robotique/chemin_violet.png)
+
+### Chemin Jaune
+Le chemin jaune est un cercle utilisant un mouvement circulaire contenant 4 points intermédiaires.
+
+![](./images/tp_robotique/chemin_jaune.png)
+
+### Chemin Rose
+Le chemin rose ressemble au symbole de l’infini, utilisant 3 mouvements linéaires et 2 mouvements circulaires.
+
+![](./images/tp_robotique/chemin_rose.png)
+
+Nous avons réalisé ces chemins un à un, puis finalement nous avons créé un programme qui réunissait chaque chemin en sous-programme afin que le robot les effectue à la suite.
+
+[Vidéo du programme final](https://youtube.com/shorts/ELgOFAKixbU?feature=share)
+
+---
+
+## Travaux Pratiques numéro 2 - 6 décembre
+
+Durant cette deuxième séance de 4 heures, nous avons expérimenté de nouveaux chemins en incluant une nouveauté : le lissage. 
+
+### Chemin Vert
+Le chemin vert en dent de requin avec 5 passages aller-retour, en ajoutant et adaptant le lissage à chaque passage.
+
+![](./images/tp_robotique/chemin_vert.png)
+
+Nous avons rencontré des difficultés avec les points d’approche et de sortie de chaque fin de chemin, que nous avons corrigées. Le lissage ne pouvait pas dépasser 29 mm pour maintenir la tangence.
+
+[Vidéo du premier chemin lissé à 28mm](https://youtu.be/3ew3rhtOqTs)
+
+---
+
+## Travaux Pratiques numéro 3 - 11 décembre
+
+Nous avons débuté par le chemin rouge lors de cette séance. Nous avons programmé le plan en comprenant l’erreur initiale : le programmer à partir de la base et non de l’outil.
+
+### Chemin Rouge
+Ce chemin comporte uniquement des mouvements linéaires accompagnés de lissage pour une vitesse constante, avec un symbole en “dents de requins”.
+
+![](./images/tp_robotique/chemin_rouge.png)
+
+[Vidéo du chemin finalisé](https://youtu.be/Iy3DE5gGFrM)
+
+---
+
+## Travaux Pratiques numéro 4 - 21 décembre
+
+Nous avons mis en œuvre nos compétences dans un exercice ludique pour faire suivre le chemin au PCO sans qu’il touche le fil de fer continu.
+
+![](./images/tp_robotique/chemin_final.png)
+
+Nous avons renseigné le plan par rapport à l’outil avec l’aide du pendant, en utilisant des mouvements linéaires accompagnés de lissage, sauf pour une partie circulaire.
+
+[Vidéo du chemin finalisé](https://youtu.be/uBxb_oEfM0o)
+
+Dans la vidéo, on voit bien que le robot a une vitesse constante et réalise le chemin en ne touchant presque jamais le fil de fer, avec un seul problème mineur sur le mouvement circulaire. -->
+
+
+<!-- Last updated date -->
+
+<hr />
+<div class="md-source-date">
+  <small>
+    
+      Auteur :  Sebastian Gomez, Thomas Fiolet, Jules Topart - 
+    
+    <!-- mkdocs-git-revision-date-localized-plugin -->
+    
+      Dernière mise à jour: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">24 octobre 2024</span>
+
+      
+
+    <!-- mkdocs-git-revision-date-plugin -->
+    
+  </small>
+</div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2021 - Unilasalle Amiens - Creative Commons Attribution Non Commercial
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.instant", "navigation.instant.progress", "navigation.tracking", "search.suggest", "navigation.footer", "navigation.top", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+        <script src="../../../../js/mkdocs-charts-plugin.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+      
+        <script src="../../../../theme/p5.min.js"></script>
+      
+        <script src="../../../../theme/p5.fillGradient.js"></script>
+      
+        <script src="../../../../theme/config.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/1.5.2/math.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/pseudocode@latest/build/pseudocode.min.js"></script>
+      
+    
+  </body>
+</html>
