@@ -118,7 +118,6 @@ img {
     padding: 0 !important;
 }
 
-
 .img-medium{
     width: 50%;
 }
@@ -131,61 +130,11 @@ img {
     width: 15%;
 }
 
-
-.mdx-container {
-    z-index: 3;
-    padding-top: px2rem(20px);
-    background: linear-gradient(to bottom, var(--md-primary-fg-color) 10%, var(--md-primary-fg-color--light));
-
-  [data-md-color-scheme=slate] .mdx-container {
-    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: hsla(230, 15%, 14%, 1)' /></svg>") no-repeat bottom, linear-gradient(to bottom, var(--md-primary-fg-color), hsl(230deg, 15%, 25%) 99%, var(--md-default-bg-color) 99%);
-  }
-
-
-  .mdx-hero {
-    margin: 0;
-    color: var(--md-primary-bg-color);
-  }
-  .mdx-hero h1 {
-    margin-left: 50px;
-    margin-bottom: 10px;
-    font-weight: 700;
-    color: currentcolor;
-  }
-  .mdx-hero__content {
-    padding-bottom: px2rem(120px);
-    color: var(--md-primary-bg-color);
-  }
-  .mdx-hero__image {
-    order: 1;
-    
-    display: block;
-    align-items: center;
-    justify-content: center;
-    img{
-        border-radius: 50px !important;
-        background-color: #fff;
-        margin-left: auto;
-            margin-right: auto;
-        height: auto;
-        width: 100%;
-        margin-bottom: 25px;
-        z-index: -1;
-    }
-  }
-  .mdx-hero .md-button {
-    margin-top: px2rem(10px);
-    margin-right: px2rem(10px);
-    color: var(--md-primary-bg-color);
-  }
-  .mdx-hero .md-button:is(:focus, :hover) {
-    color: var(--md-accent-bg-color);
-    background-color: var(--md-accent-fg-color);
-    border-color: var(--md-accent-fg-color);
-  }
-  .mdx-hero .md-button--primary {
-    color: var(--md-primary-fg-color);
-    background-color: var(--md-primary-bg-color);
-    border-color: var(--md-primary-bg-color);
-    border-radius: 10px !important;
-  }
+.hero-image{
+    height: auto;
+    width: auto;
+    padding: 0px;
+    padding-bottom: 0px;
+    border-radius: 0px;
+    background-color: #fff; 
+}

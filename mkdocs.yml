@@ -1,10 +1,10 @@
 # Replace the text below to customize your site
-site_name: Hub Production Automatisée et Usine connectée (PAUC)
+site_name: Hub - Production Automatisée et Usine connectée
 docs_dir: 'docs/'
 site_dir: 'generated/'
 
 site_description: Bienvenue sur le site officiel de l'Usine École d'UniLaSalle Amiens, plateforme dédiée aux nouvelles technologies lié à l'industrie du futur.
-site_author: Jules Topart, Sebastian Gomez
+site_author: Sebastian Gomez, Thomas Fiolet, Jules Topart
 copyright: Copyright 2021 - Unilasalle Amiens - Creative Commons Attribution Non Commercial
 
 site_url: https://unifactory-lab.github.io/hub
@@ -15,26 +15,18 @@ edit_uri: edit/main/docs/
 
 nav:
   - Accueil : index.md
-  - Usines école : usines_ecole.md
-
+#  - Usine école : usines_ecole.md
   - Cours : 
-    - Robotique: class/robotics.md
-    - Usine numerique: class/usine-numerique.md
+    - class/index.md
+    - Robotique: class/robotics/index.md
+    - Usine numerique: class/factory/index.md
+    - Mécanique: class/meca/index.md
+  - Projets :
+      - projets/index.md
+      - Actionneur imp3D: projets/actionneur_imp_3d.md
+  - Documentation : documentation.md
+  - Ressources : ressources.md
 
-  - Exercices/TPs:
-
-    - Robotique:
-      - Fanuc:
-        - TP1 - Découverte et prise en main FANUC : exercices/tp.bvs.fanuc.1.md
-        - TP2 - Palettisation : exercices/tp.bvs.fanuc.2.md
-      - Universal Robots:
-        - TP1 - Découverte et prise en main UR: exercices/tp.bvs.ur.1.md
-        - TP2 - Contrôle et trajectoires avancés: exercices/tp.bvs.ur.2.md
-
-  - Projets : 
-    - Projets: projets/projets.md
-    - Actionneur imp3D: projets/actionneur_imp_3d.md
-  - Ressource : ressources.md
   # - Usines : 
   #   - Usine école 4.0 :  line/am.line.md
   #   - Mini-usine :  line/pop.corn.line.md
@@ -161,12 +153,15 @@ theme:
   icon:
     logo : material/book
   features:
+    - navigation.indexes
     - navigation.tabs
     - navigation.instant
+    - navigation.instant.progress
     - navigation.tracking
-    - search.suggest
+    - search.suggest 
+    - navigation.footer
     - navigation.top
-
+    - toc.follow
 extra:
   social:
     # For other social icons at https://squidfunk.github.io/mkdocs-material/setup/adding-social-links/
@@ -180,6 +175,7 @@ plugins:
   - git-revision-date-localized:
       fallback_to_build_date: true
   - charts
+  - macros
 
 extra_javascript:
   - theme/js/config.js
@@ -192,7 +188,7 @@ extra_javascript:
 
 extra_css:
   - stylesheets/extra.css
-  - stylesheets/css/neoteroi-mkdocs.css
+  - stylesheets/neoteroi-mkdocs.css
 
 markdown_extensions:
 - attr_list
@@ -202,14 +198,17 @@ markdown_extensions:
 - smarty
 - sane_lists
 - admonition
+- md_in_html
 - codehilite:
-    guess_lang: false
+    guess_lang: true
 - toc:
     permalink: false
 - pymdownx.tasklist:
     custom_checkbox: true
     clickable_checkbox: true
-- pymdownx.emoji
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
 - pymdownx.details
 - pymdownx.tabbed
 - pymdownx.arithmatex:
@@ -223,3 +222,5 @@ markdown_extensions:
         class: vegalite
         format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
 - neoteroi.cards
+
+
