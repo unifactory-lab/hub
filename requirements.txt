@@ -5,3 +5,4 @@ mkdocs-charts-plugin
 neoteroi-mkdocs
 mkdocs-add-number-plugin
 mkdocs-macros-plugin
+mkdocs-pseudocode
