@@ -9,6 +9,22 @@
     src: url("./Indivisa Text Sans-Regular.ttf");
 }
 
+
+
+.p5Container{
+    justify-content: center;
+    display: flex;
+}
+
+
+.row {
+display: flex;
+}
+
+.column {
+flex: 50%;
+}
+
 canvas {
     display: block;
     border: 3mm ridge rgba(211, 40, 48, 0.6);
@@ -26,11 +42,11 @@ canvas {
 .md-typeset h1,
 .md-typeset h2, 
 .md-typeset h3{
-    font-family: indivisa-title;
-    font-weight: bold;
+    text-align: left;
+    margin: 0 0 0.25em
 }
 
-/* Hide main content for now */
+
 .md-content {
     text-align: justify;
 }
@@ -137,4 +153,28 @@ img {
     padding-bottom: 0px;
     border-radius: 0px;
     background-color: #fff; 
+}
+
+
+.mermaid { 
+    --md-mermaid-font-family:            var(--md-text-font-family), sans-serif; 
+  
+    --md-mermaid-edge-color:             var(--md-code-fg-color); 
+    --md-mermaid-node-bg-color:          var(--md-accent-fg-color--transparent); 
+    --md-mermaid-node-fg-color:          var(--md-accent-fg-color); 
+    --md-mermaid-label-bg-color:         var(--md-default-bg-color); 
+    --md-mermaid-label-fg-color:         var(--md-code-fg-color); 
+  
+    margin: 1em 0; 
+    line-height: normal; 
+  } 
+  
+  
+.center {
+display: block;
+margin: 0 auto;
+}
+
+.right {
+float : right;
 }

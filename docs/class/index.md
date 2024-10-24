@@ -34,7 +34,7 @@ Chaque section est en constante évolution afin de vous offrir des contenus à j
     ---
 
     Plongez dans l’univers de la digitalisation des usines, de la simulation des processus à l'intégration des outils de production intelligente.<br>
-    <center>[Lire](./robotics/index.md){.md-button .md-button--primary}</center>
+    <center>[Lire](./factory/index.md){.md-button .md-button--primary}</center>
 
 </div>
 
