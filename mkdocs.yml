@@ -15,7 +15,7 @@ edit_uri: edit/main/docs/
 
 nav:
   - Accueil : index.md
-  - Cours : class.md
+  - Cours : class/index.md
   - Projets :
       - projets/index.md
       - Actionneur imp3D: projets/actionneur_imp_3d.md
