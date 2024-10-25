@@ -19,14 +19,14 @@ Chaque section est en constante évolution afin de vous offrir des contenus à j
     ---
 
     Découvrez les technologies robotiques modernes et leurs applications dans l'industrie, avec un focus sur la programmation et l’automatisation des tâches complexes.<br>
-    <center>[Lire](./robotics/index.md){.md-button .md-button--primary}
+    <center>[Lire](https://unifactory-lab.github.io/class-robotics/){.md-button .md-button--primary}
 
 - :material-wrench:{ .lg .middle } __Génie mécanique__
 
     --- 
 
     Explorez les fondements de l’ingénierie mécanique, de la conception à la fabrication, en passant par les propriétés des matériaux et la simulation des systèmes.<br>
-    <center>[Lire](./meca/index.md){.md-button .md-button--primary}
+    <center>[Lire](https://unifactory-lab.github.io/class-meca/){.md-button .md-button--primary}
 
 
 - :material-factory:{ .lg .middle } __Usine numérique__
@@ -34,7 +34,7 @@ Chaque section est en constante évolution afin de vous offrir des contenus à j
     ---
 
     Plongez dans l’univers de la digitalisation des usines, de la simulation des processus à l'intégration des outils de production intelligente.<br>
-    <center>[Lire](./factory/index.md){.md-button .md-button--primary}</center>
+    <center>[Lire](https://unifactory-lab.github.io/class-factory/){.md-button .md-button--primary}</center>
 
 </div>
 
