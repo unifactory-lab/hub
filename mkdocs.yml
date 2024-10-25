@@ -16,7 +16,7 @@ edit_uri: edit/main/docs/
 nav:
   - Accueil : index.md
   - Cours : 
-    - class/index.md
+    - class.md
     - Robotique: class/robotics/index.md
     - Mécanique: 
       - class/meca/index.md
