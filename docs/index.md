@@ -9,11 +9,13 @@ hide:
 
 À travers nos programmes, nous préparons nos étudiants et nos étudiantes à devenir les acteurs clés de la transformation numérique et environnemental des usines et des systèmes de production. Grâce à ces supports de cours "Web", aux projets et à la documentation de l'usine, vous avez toutes les clés en main pour étudier et faire évoluer notre usine-école.
 
-**Les Cours disponicle sur le Hub :**
+**Les Cours disponibles sur le Hub :**
 
-- Robotique : (En cours de transfer)
-- Génie mécanique : (En cours de rédaction)
-- Usine numérique : Simulation, digitalisation, et intégration de la production intelligente à travers des outils avancés.
+- Robotique : utilisation et programmation de robots dans un environnement industriel.
+- Génie mécanique : modélisation de problèmes mécaniques et conception de systèmes.
+- Usine numérique : simulation, digitalisation, et intégration de la production intelligente à travers des outils avancés.
+
+[Accéder aux différents cours](../hub/class){.md-button}
 
 **Autres contenus :**
 

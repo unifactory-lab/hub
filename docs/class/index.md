@@ -11,30 +11,33 @@ Retrouvez ici l'ensemble des cours proposés dans notre département dédié à 
 Chaque section est en constante évolution afin de vous offrir des contenus à jour et alignés avec les dernières avancées technologiques. Que vous soyez en train d'explorer la robotique, de vous plonger dans la mécanique, ou de découvrir l'usine numérique, vous pouvez apprendre à votre rythme grâce à ces contenus.
 
 **Sélectionnez un cours pour commencer :**
-<center>
-<div class="grid cards" markdown>
-
-- :material-chart-bell-curve-cumulative:{ .lg .middle } __Fondamentaux de mathématique (Pré-requis)__
-
-    ---
-
-    Rafraichissez vos connaissances en mathématique avant de vous attaquer aux cours ci-dessous. Ce cours rassemble quelques fondamentaux de mathématique, (à savoir les vecteurs, les matrices et autres outils) pour étudier la mécanique et la robotique dans de bonne conditions  <br>
-    <center>[Lire le cours](https://unifactory-lab.github.io/class-math/){.md-button}</center>
-</div>
 </center>
 
 <div class="grid cards" markdown>
 
 -   :material-robot:{ .lg .middle } __Robotique__
 
-    ---
+    --- 
+
+    <img class="img-no-border" src="robotique.jpg" alt="Photo d'illustration">
 
     Découvrez les technologies robotiques modernes et leurs applications dans l'industrie, avec un focus sur la programmation et l’automatisation des tâches complexes.<br>
+    <center>[Lire le cours](https://unifactory-lab.github.io/class-robotics/){.md-button}
+
+-   :material-eye:{ .lg .middle } __Vision__
+
+    --- 
+
+    <img class="img-no-border" src="vision.jpg" alt="Photo d'illustration">
+
+    Découvrez les outils du traitement d'images et de la vision par ordinateur, ainsi que leurs applications à la localisation et à la cartographie automatique, au contrôle qualité ou à la détection d'objets.<br>
     <center>[Lire le cours](https://unifactory-lab.github.io/class-robotics/){.md-button}
 
 - :material-wrench:{ .lg .middle } __Génie mécanique__
 
     --- 
+
+    <img class="img-no-border" src="mecanique.jpg" alt="Photo d'illustration">
 
     Explorez les fondements de l’ingénierie mécanique, de la conception à la fabrication, en passant par les propriétés des matériaux et la simulation des systèmes.<br>
     <center>[Lire le cours](https://unifactory-lab.github.io/class-meca/){.md-button}
@@ -42,11 +45,37 @@ Chaque section est en constante évolution afin de vous offrir des contenus à j
 
 - :material-factory:{ .lg .middle } __Usine numérique__
 
-    ---
+    --- 
+
+    <img class="img-no-border" src="usi_num.jpg" alt="Photo d'illustration">
 
     Plongez dans l’univers de la digitalisation des usines, de la simulation des processus à l'intégration des outils de production intelligente.<br>
     <center>[Lire le cours](https://unifactory-lab.github.io/class-factory/){.md-button}</center>
 
+</div>
+
+**Rappels et pré-requis :**
+
+<center>
+<div class="grid cards" markdown>
+
+- :material-chart-bell-curve-cumulative:{ .lg .middle } __Fondamentaux de mathématique (Pré-requis)__
+
+    ---
+
+    <img class="img-no-border" src="math.jpg" alt="Photo d'illustration">
+
+    Rafraichissez vos connaissances en mathématique avant de vous attaquer aux cours ci-dessus. Ce cours rassemble quelques fondamentaux de mathématique, (à savoir les vecteurs, les matrices et autres outils) pour étudier la mécanique et la robotique dans de bonne conditions.  <br>
+    <center>[Lire le cours](https://unifactory-lab.github.io/class-math/){.md-button}</center>
+
+- :material-chart-bell-curve-cumulative:{ .lg .middle } __Fondamentaux de physique (Pré-requis)__
+
+    ---
+
+    <img class="img-no-border" src="phys.jpg" alt="Photo d'illustration">
+
+    Rafraichissez vos connaissances en physique avant de vous attaquer aux cours ci-dessus.  <br>
+    <center>[TODO](){.md-button}</center>
 </div>
 
 ---
